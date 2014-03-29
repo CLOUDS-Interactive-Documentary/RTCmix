@@ -576,7 +576,7 @@ RTcmix::get_bus_config(const char *inst_name)
 	 }
 	 Bus_Config_Status = YES;
    }
-   Bus_Config_Status.unlock();
+  // Bus_Config_Status.unlock();
 
    for(i=0;i<NCHANS;i++) {
 //	 pthread_mutex_lock(&out_in_use_lock);
@@ -584,7 +584,7 @@ RTcmix::get_bus_config(const char *inst_name)
 //	 pthread_mutex_unlock(&out_in_use_lock);
 //	 pthread_mutex_lock(&to_out_lock);
 	 ToOutPlayList[i] = i;
-	 pthread_mutex_unlock(&to_out_lock);
+	 //pthread_mutex_unlock(&to_out_lock);
    }
 
    default_bus_slot = new BusSlot;

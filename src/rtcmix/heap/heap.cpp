@@ -3,7 +3,7 @@
    the license to this software and for a DISCLAIMER OF ALL WARRANTIES.
 */
 #include "heap.h"
-#include <lock.h>
+//#include <lock.h>
 #include <Instrument.h>
 #ifndef IOS
 #include <iostream>
