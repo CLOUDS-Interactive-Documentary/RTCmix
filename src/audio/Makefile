@@ -13,24 +13,10 @@ OBJECTS =  AudioDevice.o AudioIODevice.o AudioDeviceImpl.o \
 		   DualOutputAudioDevice.o AudioFileDevice.o \
 		   NetAudioDevice.o audio_dev_creator.o sndlibsupport.o
 
-ifeq ($(ARCH),LINUX)
-	OBJECTS +=  OSSAudioDevice.o SinglePortOSSAudioDevice.o \
-			MultiPortOSSAudioDevice.o ALSAAudioDevice.o TestAudioDevice.o
-endif
-
 ifeq ($(ARCH),MACOSX)
    ifeq ($(BUILDTYPE), STANDALONE)
 		OBJECTS += OSXAudioDevice.o
    endif
-endif
-
-ifeq ($(ARCH),SGI)
-	OBJECTS += SGIAudioDevice.o
-endif
-
-ifeq ($(JACK_SUPPORT), TRUE)
-	OBJECTS += JackAudioDevice.o
-	CXXFLAGS += $(JACK_CFLAGS)
 endif
 
 SNDLIB = ../sndlib/sndlib.a
