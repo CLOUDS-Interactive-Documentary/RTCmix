@@ -1,7 +1,11 @@
 .DS_Store
 
 *.a
+*.obj
 
+VS11/x64/
 *.o
-
-/src/audio/.DS_Store
+*.log
+*.sdf
+*.opensdf
+*.suo
