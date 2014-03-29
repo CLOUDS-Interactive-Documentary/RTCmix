@@ -3,6 +3,7 @@
 // the license to this software and for a DISCLAIMER OF ALL WARRANTIES.
 
 #include <Oreson.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 Oreson::Oreson(float srate, float centerFreq, float bandwidth, Scale scale)

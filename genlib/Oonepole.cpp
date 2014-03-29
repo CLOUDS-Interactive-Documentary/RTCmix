@@ -3,6 +3,7 @@
    the license to this software and for a DISCLAIMER OF ALL WARRANTIES.
 */
 #include <Oonepole.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include <float.h>	// for -FLT_MAX
 

@@ -7,6 +7,7 @@
 
 #include <RefCounted.h>
 #include <bus.h>
+#include <stdio.h>
 //#include <Locked.h>
 #include <rt_types.h>
 #include <sys/types.h>

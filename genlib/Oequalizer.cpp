@@ -3,6 +3,7 @@
    the license to this software and for a DISCLAIMER OF ALL WARRANTIES.
 */
 #include <Oequalizer.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include <assert.h>
 

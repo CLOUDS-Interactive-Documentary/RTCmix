@@ -4,6 +4,7 @@
 */
 
 #include "Ostrum.h"
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 const float Ostrum::kMinFreq = 20.0f;
