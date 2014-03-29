@@ -1,0 +1,70 @@
+checkins:
+makefile.conf.in
+insts/jg/objlib/SoundIn.cpp
+insts/std/IIR/rtprofile.cpp
+insts/std/METAFLUTE/rtprofile.cpp
+insts/std/METAFLUTE/sflcfuncs.c
+insts/std/MOVE/moveprof.c
+insts/std/MOVE/placeprof.c
+insts/std/STRUM/rtprofile.cpp
+src/audio/ThreadedAudioDevice.cpp
+src/audio/audio_dev_creator.cpp
+src/conf/Config.cpp
+src/rtcmix/profile.c
+src/rtcmix/rtprofile.cpp
+src/sndlib/sndlib.h
+
+remove these:
+insts/jg/GRANULATE
+insts/jg/NPAN
+insts/jg/QPAN
+insts/jg/SROOM
+insts/jg/denoise
+insts/std/DUMP
+insts/std/LPCPLAY
+insts/std/MMOVE
+insts/std/PHASER
+insts/std/PVOC
+insts/std/convolve
+insts/std/gravy
+insts/std/mrotate
+insts/std/numtest
+insts/std/rotate
+insts/std/sgran
+insts/std/stgran
+insts/std/wow
+insts/vccm
+src/audio/OSXAudioDevice.cpp
+src/conf/test.cpp
+src/control/common
+src/control/datafile
+src/control/display
+src/control/midi
+src/control/mouse
+src/control/osc
+src/parser/parse_with_perl.c
+src/parser/parse_with_python.c
+src/parser/perl
+src/parser/python
+src/rtcmix/RTsockfuncs.c
+?src/rtcmix/RawDataFile.cpp
+?src/rtcmix/RawDataFile.h
+src/rtcmix/TaskManager.cpp
+src/rtcmix/pRTcmix.cpp
+src/rtcmix/pRTcmix.h
+src/rtcmix/pyRTcmix.cpp
+src/rtcmix/pyRTcmix.h
+
+copy y.tab.c and y.tab.h over from max/msp versions
+	-- change line 22 to #include "lex.yy.c.maxmsp" in y.tab.c
+
+modify config.make in top-level android dir
+
+not sure:
+insts/std/MOVE/BASE.cpp
+insts/std/MOVE/BASE.h
+src/parser/minc/builtin.c
+src/parser/parse_with_minc.c
+	(check in the original haha src if these don't work)
+bunch of them in src/rtcmix.  We'll see.
+
