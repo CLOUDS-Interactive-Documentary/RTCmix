@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\genlib\allpass.c" />
+    <ClCompile Include="..\genlib\allpole.c" />
+    <ClCompile Include="..\genlib\ampdb.c" />
+    <ClCompile Include="..\genlib\ballpole.c" />
+    <ClCompile Include="..\genlib\bbuzz.c" />
+    <ClCompile Include="..\genlib\boost.c" />
+    <ClCompile Include="..\genlib\boscili.c" />
+    <ClCompile Include="..\genlib\bpluck.c" />
+    <ClCompile Include="..\genlib\breson.c" />
+    <ClCompile Include="..\genlib\brrand.c" />
+    <ClCompile Include="..\genlib\buzz.c" />
+    <ClCompile Include="..\genlib\comb.c" />
+    <ClCompile Include="..\genlib\combset.c" />
+    <ClCompile Include="..\genlib\delget.c" />
+    <ClCompile Include="..\genlib\delput.c" />
+    <ClCompile Include="..\genlib\delset.c" />
+    <ClCompile Include="..\genlib\dliget.c" />
+    <ClCompile Include="..\genlib\evp.c" />
+    <ClCompile Include="..\genlib\evset.c" />
+    <ClCompile Include="..\genlib\FFTReal.cpp" />
+    <ClCompile Include="..\genlib\hcomb.c" />
+    <ClCompile Include="..\genlib\hplset.c" />
+    <ClCompile Include="..\genlib\hpluck.c" />
+    <ClCompile Include="..\genlib\Oallpass.cpp" />
+    <ClCompile Include="..\genlib\Oallpassi.cpp" />
+    <ClCompile Include="..\genlib\Obalance.cpp" />
+    <ClCompile Include="..\genlib\Obucket.cpp" />
+    <ClCompile Include="..\genlib\Ocomb.cpp" />
+    <ClCompile Include="..\genlib\Ocombi.cpp" />
+    <ClCompile Include="..\genlib\Odcblock.cpp" />
+    <ClCompile Include="..\genlib\Odelay.cpp" />
+    <ClCompile Include="..\genlib\Odelayi.cpp" />
+    <ClCompile Include="..\genlib\Odistort.cpp" />
+    <ClCompile Include="..\genlib\Oequalizer.cpp" />
+    <ClCompile Include="..\genlib\Offt.cpp" />
+    <ClCompile Include="..\genlib\Oonepole.cpp" />
+    <ClCompile Include="..\genlib\Ooscil.cpp" />
+    <ClCompile Include="..\genlib\Ooscili.cpp" />
+    <ClCompile Include="..\genlib\Orand.cpp" />
+    <ClCompile Include="..\genlib\Oreson.cpp" />
+    <ClCompile Include="..\genlib\Orms.cpp" />
+    <ClCompile Include="..\genlib\Ortgetin.cpp" />
+    <ClCompile Include="..\genlib\oscil.c" />
+    <ClCompile Include="..\genlib\oscili.c" />
+    <ClCompile Include="..\genlib\osciln.c" />
+    <ClCompile Include="..\genlib\oscilni.c" />
+    <ClCompile Include="..\genlib\Ostrum.cpp" />
+    <ClCompile Include="..\genlib\pitchconv.c" />
+    <ClCompile Include="..\genlib\pluck.c" />
+    <ClCompile Include="..\genlib\pluckset.c" />
+    <ClCompile Include="..\genlib\randf.c" />
+    <ClCompile Include="..\genlib\randfuncs.c" />
+    <ClCompile Include="..\genlib\random.c" />
+    <ClCompile Include="..\genlib\reson.c" />
+    <ClCompile Include="..\genlib\resonz.c" />
+    <ClCompile Include="..\genlib\reverb.c" />
+    <ClCompile Include="..\genlib\rrand.c" />
+    <ClCompile Include="..\genlib\rsnset.c" />
+    <ClCompile Include="..\genlib\rvbset.c" />
+    <ClCompile Include="..\genlib\setline.c" />
+    <ClCompile Include="..\genlib\spray.c" />
+    <ClCompile Include="..\genlib\table.c" />
+    <ClCompile Include="..\genlib\tablei.c" />
+    <ClCompile Include="..\genlib\tableset.c" />
+    <ClCompile Include="..\genlib\wshape.c" />
+    <ClCompile Include="..\src\audio\sndlibsupport.c" />
+    <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp" />
+    <ClCompile Include="..\src\rtcmix\addrtInst.cpp" />
+    <ClCompile Include="..\src\rtcmix\buffers.cpp" />
+    <ClCompile Include="..\src\rtcmix\bus_config.cpp" />
+    <ClCompile Include="..\src\rtcmix\checkInsts.cpp" />
+    <ClCompile Include="..\src\rtcmix\check_byte_order.c" />
+    <ClCompile Include="..\src\rtcmix\command_line.c" />
+    <ClCompile Include="..\src\rtcmix\connection.cpp" />
+    <ClCompile Include="..\src\rtcmix\converter.cpp" />
+    <ClCompile Include="..\src\rtcmix\DataFile.cpp" />
+    <ClCompile Include="..\src\rtcmix\dispatch.cpp" />
+    <ClCompile Include="..\src\rtcmix\filter.cpp" />
+    <ClCompile Include="..\src\rtcmix\funderflow.c" />
+    <ClCompile Include="..\src\rtcmix\getsample.c" />
+    <ClCompile Include="..\src\rtcmix\infile.c" />
+    <ClCompile Include="..\src\rtcmix\InputFile.cpp" />
+    <ClCompile Include="..\src\rtcmix\Instrument.cpp" />
+    <ClCompile Include="..\src\rtcmix\intraverse.cpp" />
+    <ClCompile Include="..\src\rtcmix\io.c" />
+    <ClCompile Include="..\src\rtcmix\lfo.cpp" />
+    <ClCompile Include="..\src\rtcmix\loader.cpp" />
+    <ClCompile Include="..\src\rtcmix\load_utils.c" />
+    <ClCompile Include="..\src\rtcmix\merror.c" />
+    <ClCompile Include="..\src\rtcmix\message.c" />
+    <ClCompile Include="..\src\rtcmix\minc_functions.cpp" />
+    <ClCompile Include="..\src\rtcmix\minc_info.cpp" />
+    <ClCompile Include="..\src\rtcmix\minout.c" />
+    <ClCompile Include="..\src\rtcmix\MMPrint.cpp" />
+    <ClCompile Include="..\src\rtcmix\mm_rtsetparams.cpp" />
+    <ClCompile Include="..\src\rtcmix\modtable.cpp" />
+    <ClCompile Include="..\src\rtcmix\monitor.cpp" />
+    <ClCompile Include="..\src\rtcmix\m_system.c" />
+    <ClCompile Include="..\src\rtcmix\ops.cpp" />
+    <ClCompile Include="..\src\rtcmix\Option.cpp" />
+    <ClCompile Include="..\src\rtcmix\PFBusData.cpp" />
+    <ClCompile Include="..\src\rtcmix\PField.cpp" />
+    <ClCompile Include="..\src\rtcmix\PFieldSet.cpp" />
+    <ClCompile Include="..\src\rtcmix\printsf.c" />
+    <ClCompile Include="..\src\rtcmix\profile.c" />
+    <ClCompile Include="..\src\rtcmix\pRTcmix.cpp" />
+    <ClCompile Include="..\src\rtcmix\pyRTcmix.cpp" />
+    <ClCompile Include="..\src\rtcmix\Random.cpp" />
+    <ClCompile Include="..\src\rtcmix\RawDataFile.cpp" />
+    <ClCompile Include="..\src\rtcmix\RefCounted.cpp" />
+    <ClCompile Include="..\src\rtcmix\resetamp.c" />
+    <ClCompile Include="..\src\rtcmix\RTcmix.cpp" />
+    <ClCompile Include="..\src\rtcmix\RTcmixMain.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtcmix_types.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtcmix_wrappers.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtgetin.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtgetsamps.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtinput.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtoutput.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtprofile.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtsendsamps.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtsetinput.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtsetoutput.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtsetparams.cpp" />
+    <ClCompile Include="..\src\rtcmix\RTThread.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtwritesamps.cpp" />
+    <ClCompile Include="..\src\rtcmix\rt_ug_intro.cpp" />
+    <ClCompile Include="..\src\rtcmix\sampfunc.c" />
+    <ClCompile Include="..\src\rtcmix\set_option.cpp" />
+    <ClCompile Include="..\src\rtcmix\sfcopy.c" />
+    <ClCompile Include="..\src\rtcmix\sfprint.c" />
+    <ClCompile Include="..\src\rtcmix\sfstats.c" />
+    <ClCompile Include="..\src\rtcmix\sound.c" />
+    <ClCompile Include="..\src\rtcmix\soundio.c" />
+    <ClCompile Include="..\src\rtcmix\sound_sample_buf_read.cpp" />
+    <ClCompile Include="..\src\rtcmix\table.cpp" />
+    <ClCompile Include="..\src\rtcmix\tableutils.cpp" />
+    <ClCompile Include="..\src\rtcmix\TaskManager.cpp" />
+    <ClCompile Include="..\src\rtcmix\tempo.c" />
+    <ClCompile Include="..\src\rtcmix\ug_intro.c" />
+    <ClCompile Include="..\src\rtcmix\utils.cpp" />
+    <ClCompile Include="..\src\sndlib\extra.c" />
+    <ClCompile Include="..\src\sndlib\headers.c" />
+    <ClCompile Include="..\src\sndlib\io.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\genlib\complexf.h" />
+    <ClInclude Include="..\genlib\FFTReal.h" />
+    <ClInclude Include="..\genlib\Oallpass.h" />
+    <ClInclude Include="..\genlib\Oallpassi.h" />
+    <ClInclude Include="..\genlib\Obalance.h" />
+    <ClInclude Include="..\genlib\Obucket.h" />
+    <ClInclude Include="..\genlib\Ocomb.h" />
+    <ClInclude Include="..\genlib\Ocombi.h" />
+    <ClInclude Include="..\genlib\Odcblock.h" />
+    <ClInclude Include="..\genlib\Odelay.h" />
+    <ClInclude Include="..\genlib\Odelayi.h" />
+    <ClInclude Include="..\genlib\Odistort.h" />
+    <ClInclude Include="..\genlib\Oequalizer.h" />
+    <ClInclude Include="..\genlib\Offt.h" />
+    <ClInclude Include="..\genlib\Oonepole.h" />
+    <ClInclude Include="..\genlib\Ooscil.h" />
+    <ClInclude Include="..\genlib\Ooscili.h" />
+    <ClInclude Include="..\genlib\Orand.h" />
+    <ClInclude Include="..\genlib\Oreson.h" />
+    <ClInclude Include="..\genlib\Orms.h" />
+    <ClInclude Include="..\genlib\Ortgetin.h" />
+    <ClInclude Include="..\genlib\Ostrum.h" />
+    <ClInclude Include="..\include\bus.h" />
+    <ClInclude Include="..\include\buzz.h" />
+    <ClInclude Include="..\include\combs.h" />
+    <ClInclude Include="..\include\delmacros.h" />
+    <ClInclude Include="..\include\hpluck.h" />
+    <ClInclude Include="..\include\macros.h" />
+    <ClInclude Include="..\include\Ougens.h" />
+    <ClInclude Include="..\include\randfuncs.h" />
+    <ClInclude Include="..\include\rtupdate.h" />
+    <ClInclude Include="..\include\rt_types.h" />
+    <ClInclude Include="..\include\times.h" />
+    <ClInclude Include="..\include\ugens.h" />
+    <ClInclude Include="..\src\audio\sndlibsupport.h" />
+    <ClInclude Include="..\src\include\maxdispargs.h" />
+    <ClInclude Include="..\src\rtcmix\atomic_stack.h" />
+    <ClInclude Include="..\src\rtcmix\buffers.h" />
+    <ClInclude Include="..\src\rtcmix\BusSlot.h" />
+    <ClInclude Include="..\src\rtcmix\byte_routines.h" />
+    <ClInclude Include="..\src\rtcmix\DataFile.h" />
+    <ClInclude Include="..\src\rtcmix\dbug.h" />
+    <ClInclude Include="..\src\rtcmix\DynamicLib.h" />
+    <ClInclude Include="..\src\rtcmix\Functor.h" />
+    <ClInclude Include="..\src\rtcmix\globals.h" />
+    <ClInclude Include="..\src\rtcmix\InputFile.h" />
+    <ClInclude Include="..\src\rtcmix\Instrument.h" />
+    <ClInclude Include="..\src\rtcmix\load_utils.h" />
+    <ClInclude Include="..\src\rtcmix\mixerr.h" />
+    <ClInclude Include="..\src\rtcmix\MMPrint.h" />
+    <ClInclude Include="..\src\rtcmix\notetags.h" />
+    <ClInclude Include="..\src\rtcmix\Option.h" />
+    <ClInclude Include="..\src\rtcmix\parse_dispatch.h" />
+    <ClInclude Include="..\src\rtcmix\PFBusData.h" />
+    <ClInclude Include="..\src\rtcmix\PField.h" />
+    <ClInclude Include="..\src\rtcmix\PFieldSet.h" />
+    <ClInclude Include="..\src\rtcmix\prototypes.h" />
+    <ClInclude Include="..\src\rtcmix\pRTcmix.h" />
+    <ClInclude Include="..\src\rtcmix\pyRTcmix.h" />
+    <ClInclude Include="..\src\rtcmix\Random.h" />
+    <ClInclude Include="..\src\rtcmix\RawDataFile.h" />
+    <ClInclude Include="..\src\rtcmix\RefCounted.h" />
+    <ClInclude Include="..\src\rtcmix\rt.h" />
+    <ClInclude Include="..\src\rtcmix\RTcmix.h" />
+    <ClInclude Include="..\src\rtcmix\RTcmixMain.h" />
+    <ClInclude Include="..\src\rtcmix\rtcmix_types.h" />
+    <ClInclude Include="..\src\rtcmix\rtdefs.h" />
+    <ClInclude Include="..\src\rtcmix\RTSemaphore.h" />
+    <ClInclude Include="..\src\rtcmix\RTThread.h" />
+    <ClInclude Include="..\src\rtcmix\sfheader.h" />
+    <ClInclude Include="..\src\rtcmix\sockdefs.h" />
+    <ClInclude Include="..\src\rtcmix\spray.h" />
+    <ClInclude Include="..\src\rtcmix\tableutils.h" />
+    <ClInclude Include="..\src\rtcmix\TaskManager.h" />
+    <ClInclude Include="..\src\rtcmix\ug_intro.h" />
+    <ClInclude Include="..\src\rtcmix\utils.h" />
+    <ClInclude Include="..\src\rtcmix\version.h" />
+    <ClInclude Include="..\src\sndlib\sndlib.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7EC893E2-B0FB-4F71-99D7-D0553AA93895}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

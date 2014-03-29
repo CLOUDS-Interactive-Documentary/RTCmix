@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="genlib">
+      <UniqueIdentifier>{7105dac0-67e7-4c98-b0ba-142bfccb3e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{bbeb0f9d-6859-4a52-a24d-31aabe983135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{65a2c5e9-5280-4e5e-a3e1-eb47d3956ffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rtcmix">
+      <UniqueIdentifier>{ae7a25aa-5abf-4adb-9248-8d332dbaa226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\audio">
+      <UniqueIdentifier>{eb813a79-83c5-49fe-9e23-89f6b0e273a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sndlib">
+      <UniqueIdentifier>{7c7e2fff-480b-43e3-83d6-103d5978dc05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\include">
+      <UniqueIdentifier>{273434ac-975f-4d9c-ab4f-0fb06932f939}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\genlib\reverb.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\rrand.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\rsnset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\rvbset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\setline.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\spray.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\table.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\tablei.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\tableset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\wshape.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\allpass.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\allpole.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\ampdb.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\ballpole.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\bbuzz.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\boost.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\boscili.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\bpluck.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\breson.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\brrand.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\buzz.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\comb.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\combset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\delget.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\delput.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\delset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\dliget.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\evp.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\evset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\FFTReal.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\hcomb.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\hplset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\hpluck.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Oallpass.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Oallpassi.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Obalance.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Obucket.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ocomb.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ocombi.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Odcblock.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Odelay.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Odelayi.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Odistort.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Oequalizer.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Offt.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Oonepole.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ooscil.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ooscili.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Orand.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Oreson.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Orms.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ortgetin.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\oscil.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\oscili.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\osciln.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\oscilni.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\Ostrum.cpp">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\pitchconv.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\pluck.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\pluckset.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\randf.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\randfuncs.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\random.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\reson.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\genlib\resonz.c">
+      <Filter>genlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\TaskManager.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\utils.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\check_byte_order.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\command_line.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\funderflow.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\getsample.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\infile.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\io.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\load_utils.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\m_system.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\merror.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\message.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\minout.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\printsf.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\profile.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\resetamp.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sampfunc.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sfcopy.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sfprint.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sfstats.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sound.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\soundio.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\tempo.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\ug_intro.c">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\addrtInst.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\buffers.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\bus_config.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\checkInsts.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\connection.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\converter.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\DataFile.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\dispatch.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\filter.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\InputFile.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\Instrument.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\intraverse.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\lfo.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\loader.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\minc_functions.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\minc_info.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\mm_rtsetparams.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\MMPrint.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\modtable.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\monitor.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\ops.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\Option.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\PFBusData.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\PField.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\PFieldSet.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\pRTcmix.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\pyRTcmix.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\Random.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\RawDataFile.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\RefCounted.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rt_ug_intro.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\RTcmix.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtcmix_types.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtcmix_wrappers.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\RTcmixMain.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtgetin.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtgetsamps.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtinput.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtoutput.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtprofile.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtsendsamps.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtsetinput.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtsetoutput.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtsetparams.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\RTThread.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtwritesamps.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\set_option.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\sound_sample_buf_read.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\table.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\tableutils.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\sndlibsupport.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sndlib\extra.c">
+      <Filter>src\sndlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sndlib\headers.c">
+      <Filter>src\sndlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sndlib\io.c">
+      <Filter>src\sndlib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\genlib\complexf.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\FFTReal.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Oallpass.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Oallpassi.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Obalance.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Obucket.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ocomb.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ocombi.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Odcblock.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Odelay.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Odelayi.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Odistort.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Oequalizer.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Offt.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Oonepole.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ooscil.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ooscili.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Orand.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Oreson.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Orms.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ortgetin.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\genlib\Ostrum.h">
+      <Filter>genlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\bus.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\buzz.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\combs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\delmacros.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\hpluck.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\macros.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Ougens.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\randfuncs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rt_types.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rtupdate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ugens.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\atomic_stack.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\buffers.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\BusSlot.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\byte_routines.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\DataFile.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\dbug.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\DynamicLib.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\Functor.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\globals.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\InputFile.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\Instrument.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\load_utils.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\mixerr.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\MMPrint.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\notetags.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\Option.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\parse_dispatch.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\PFBusData.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\PField.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\PFieldSet.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\prototypes.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\pRTcmix.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\pyRTcmix.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\Random.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RawDataFile.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RefCounted.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\rt.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RTcmix.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\rtcmix_types.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RTcmixMain.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\rtdefs.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RTSemaphore.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\RTThread.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\sfheader.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\sockdefs.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\spray.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\tableutils.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\TaskManager.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\ug_intro.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\utils.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\version.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\sndlibsupport.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sndlib\sndlib.h">
+      <Filter>src\sndlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\times.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\maxdispargs.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

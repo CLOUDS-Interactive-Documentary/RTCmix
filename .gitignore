@@ -1,6 +1,12 @@
 .DS_Store
 
+VS11/x64
+
 *.a
+*.o
 *.obj
 *.log
-VS11/x64
+*.sdf
+*.opensdf
+*.suo
+
