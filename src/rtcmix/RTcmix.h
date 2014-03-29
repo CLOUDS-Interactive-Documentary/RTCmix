@@ -334,6 +334,6 @@ private:
    to a void-returning function and sets up a timer to call that function
    every interval seconds.  Setting interval to 0.0 should disable the
    timer */
-void RTtimeit(float interval, sig_t func);
+//void RTtimeit(float interval, sig_t func);
 
 #endif	// _RTCMIX_H_

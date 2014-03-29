@@ -12,6 +12,11 @@
 #include <stdlib.h>
 #ifdef _MSC_VER
 #include <io.h>
+#if !defined(_SSIZE_T_) && !defined(_SSIZE_T_DEFINED)
+ typedef intptr_t ssize_t;
+ # define _SSIZE_T_
+ # define _SSIZE_T_DEFINED
+ #endif
 #else
 #include <unistd.h>
 #endif

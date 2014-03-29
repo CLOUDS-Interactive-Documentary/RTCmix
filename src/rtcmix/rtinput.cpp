@@ -21,6 +21,34 @@
 #include <Option.h>
 #include "audio_devices.h"
 #include "InputFile.h"
+#ifdef _MSC_VER
+#include <ctype.h>
+// implementation of strcasestr(), as mingw doesn't have it.
+// this version only returns whether or not the needle is present,
+// it does not return the position.
+static inline
+char *strcasestr(const char *haystack, const char *needle)
+{
+int i;
+int matchamt=0;
+
+	for(i=0;i<haystack[i];i++)
+	{
+		if (tolower(haystack[i]) != tolower(needle[matchamt]))
+		{
+			matchamt = 0;
+		}
+		if (tolower(haystack[i]) == tolower(needle[matchamt]))
+		{
+			matchamt++;
+			if (needle[matchamt]==0) return (char *)1;
+		}
+	}
+	
+	return 0;
+}
+#endif
+
 #ifdef LINUX
    #include <fcntl.h>
 #endif /* LINUX */

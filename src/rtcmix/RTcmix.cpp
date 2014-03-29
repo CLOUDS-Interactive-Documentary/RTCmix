@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #ifdef _MSC_VER
 #include <time.h>
-#include "times.h"
+#include <times.h>
 #include <io.h>
 #else
 #include <unistd.h>
@@ -558,16 +558,16 @@ void RTcmix::close()
    timer */
 // I notice that because this uses SIGALRM it will wake up sleep()'s
 // put sleep()s in a while loop to keep the process alive...
-void RTtimeit(float interval, sig_t func)
-{
-	struct timeval tv;
-	struct itimerval itv;
-
-	tv.tv_sec = (int)(interval);
-	tv.tv_usec = (int)((interval - (float)tv.tv_sec) * 1000000.0);
-	itv.it_interval = tv;
-	itv.it_value = tv;
-	setitimer(ITIMER_REAL, &itv, NULL);
-	signal(SIGALRM, func);
-}
+//void RTtimeit(float interval, sig_t func)
+//{
+//	struct timeval tv;
+//	struct itimerval itv;
+//
+//	tv.tv_sec = (int)(interval);
+//	tv.tv_usec = (int)((interval - (float)tv.tv_sec) * 1000000.0);
+//	itv.it_interval = tv;
+//	itv.it_value = tv;
+//	setitimer(ITIMER_REAL, &itv, NULL);
+//	signal(SIGALRM, func);
+//}
 

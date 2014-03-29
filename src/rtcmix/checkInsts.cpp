@@ -304,4 +304,5 @@ int killit(const Arg arglist[], const int nargs)
 	Instrument *Iptr = (Instrument *) arglist[0];
 
 	Iptr->setendsamp(0);
+	return 0;
 }
