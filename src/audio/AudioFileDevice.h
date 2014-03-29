@@ -3,9 +3,9 @@
 #ifndef _AUDIOFILEDEVICE_H_
 #define _AUDIOFILEDEVICE_H_
 
-//#include "ThreadedAudioDevice.h"
+#include "ThreadedAudioDevice.h"
 
-class AudioFileDevice {
+class AudioFileDevice : public ThreadedAudioDevice {
 public:
 	AudioFileDevice(const char *path, int fileType);
 	virtual ~AudioFileDevice();

@@ -4,9 +4,9 @@
 //
 
 #include "ThreadedAudioDevice.h"
-#include <sys/time.h>
-#include <sys/resource.h>	// setpriority()
-#include <sys/select.h>
+//#include <sys/time.h>
+//#include <sys/resource.h>	// setpriority()
+//#include <sys/select.h>
 #include <string.h>			// memset()
 #include <stdio.h>
 #include <assert.h>
@@ -33,7 +33,7 @@ static struct itimerval globalTimerVal;
 #endif
 
 ThreadedAudioDevice::ThreadedAudioDevice()
-	  : _device(-1), _thread(0), _frameCount(0),
+	  : _device(-1), /*_thread(0),*/ _frameCount(0),
 	  _starting(false), _paused(false), _stopping(false), _closing(false)
 {
 }
@@ -43,7 +43,7 @@ ThreadedAudioDevice::~ThreadedAudioDevice()
 	// This code handles the rare case where the child thread is starting
 	// at the same instant that the device is being destroyed.
 	PRINT1("~ThreadedAudioDevice\n");
-	if (starting() && _thread != 0) {
+	if (starting()/* && _thread != 0*/) {
 		waitForThread();
 		starting(false);
 	}
@@ -59,18 +59,18 @@ int ThreadedAudioDevice::startThread()
 	getitimer(ITIMER_PROF, &globalTimerVal);
 #endif
 	PRINT1("\tThreadedAudioDevice::startThread: starting thread\n");
-	pthread_attr_t attr;
-	pthread_attr_init(&attr);
-	int status = pthread_attr_setschedpolicy(&attr, SCHED_RR);
-	if (status != 0) {
-		fprintf(stderr, "startThread: Failed to set scheduling policy\n");
-	}
-	status = pthread_create(&_thread, &attr, _runProcess, this);
-	pthread_attr_destroy(&attr);
-	if (status < 0) {
-		error("Failed to create thread");
-	}
-	return status;
+//	pthread_attr_t attr;
+//	pthread_attr_init(&attr);
+//	int status = pthread_attr_setschedpolicy(&attr, SCHED_RR);
+	//if (status != 0) {
+	//	fprintf(stderr, "startThread: Failed to set scheduling policy\n");
+	//}
+//	status = pthread_create(&_thread, &attr, _runProcess, this);
+//	pthread_attr_destroy(&attr);
+	//if (status < 0) {
+	//	error("Failed to create thread");
+	//}
+	return 0;
 }
 
 int ThreadedAudioDevice::doStop()
@@ -95,22 +95,22 @@ int ThreadedAudioDevice::doGetFrameCount() const
 void ThreadedAudioDevice::waitForThread(int waitMs)
 {
 	if (!isPassive()) {
-		assert(_thread != 0);	// should not get called again!
+//f		assert(_thread != 0);	// should not get called again!
 		PRINT1("ThreadedAudioDevice::waitForThread: waiting for thread to finish\n");
-		if (pthread_join(_thread, NULL) == -1) {
-			PRINT0("ThreadedAudioDevice::doStop: terminating thread!\n");
-#ifndef OF_ANDROID
-			pthread_cancel(_thread);
-#endif
-			_thread = 0;
-		}
+//		if (pthread_join(_thread, NULL) == -1) {
+//			PRINT0("ThreadedAudioDevice::doStop: terminating thread!\n");
+//#ifndef OF_ANDROID
+//			pthread_cancel(_thread);
+//#endif
+//			_thread = 0;
+//		}
 		PRINT1("\tThreadedAudioDevice::waitForThread: thread done\n");
 	}
 }
 
 inline void	ThreadedAudioDevice::setFDSet()
 {
-	fd_set *thisSet = NULL;
+//	fd_set *thisSet = NULL;
 #ifdef PREFER_SELECT_ON_WRITE
 	if (isRecording() && !isPlaying())
 		// Use read fd_set for half-duplex record only.
@@ -119,23 +119,23 @@ inline void	ThreadedAudioDevice::setFDSet()
 		// Use write fd_set for full-duplex and half-duplex play.
 		thisSet = &_wfdset;
 #else
-	if (isRecording())
+//	if (isRecording())
 		// Use read fd_set for for full-duplex and half-duplex record.
-		thisSet = &_rfdset;
-	else if (isPlaying() && !isRecording())
+//		thisSet = &_rfdset;
+//	else if (isPlaying() && !isRecording())
 		// Use write fd_set for half-duplex play only.
-		thisSet = &_wfdset;
+//		thisSet = &_wfdset;
 #endif
-	FD_SET(_device, thisSet);
+//	FD_SET(_device, thisSet);
 }
 
 void ThreadedAudioDevice::setDevice(int dev)
 {
 	_device = dev;
 	if (_device > 0) {
-		FD_ZERO(&_rfdset);
-		FD_ZERO(&_wfdset);
-		setFDSet();
+		//FD_ZERO(&_rfdset);
+		//FD_ZERO(&_wfdset);
+		//setFDSet();
 	}
 }
 
@@ -146,26 +146,26 @@ int ThreadedAudioDevice::waitForDevice(unsigned int wTime) {
 	// Wait wTime msecs for select to return, then bail.
 	if (!stopping()) {
 		int nfds = _device + 1;
-		struct timeval tv;
-		tv.tv_sec = waitSecs;
-		tv.tv_usec = waitUsecs;
+		//struct timeval tv;
+		//tv.tv_sec = waitSecs;
+		//tv.tv_usec = waitUsecs;
 		// If wTime == 0, wait forever by passing NULL as the final arg.
 //		if (!isPlaying())
 //			printf("select(%d, 0x%x, 0x%x, NULL, 0x%x)...\n", 
 //					nfds, &_rfdset, &_wfdset, wTime == 0 ?  NULL : &tv);
-		int selret = ::select(nfds, &_rfdset, &_wfdset,
-							  NULL, wTime == 0 ?  NULL : &tv);
-		if (selret <= 0) {
-			if (errno != EINTR)
-				fprintf(stderr,
-						"ThreadedAudioDevice::waitForDevice: select %s\n",
-						(selret == 0) ? "timed out" : "returned error");
-			ret = -1;
-		}
-		else {
-			setFDSet();
-			ret = 0;
-		}
+		//int selret = ::select(nfds, &_rfdset, &_wfdset,
+		//					  NULL, wTime == 0 ?  NULL : &tv);
+		//if (selret <= 0) {
+		//	if (errno != EINTR)
+		//		fprintf(stderr,
+		//				"ThreadedAudioDevice::waitForDevice: select %s\n",
+		//				(selret == 0) ? "timed out" : "returned error");
+		//	ret = -1;
+//		}
+		//else {
+		//	setFDSet();
+		//	ret = 0;
+		//}
 	}
 	else {
 		PRINT1("ThreadedAudioDevice::waitForDevice: stopping == true\n");
@@ -181,11 +181,11 @@ void *ThreadedAudioDevice::_runProcess(void *context)
 	getitimer(ITIMER_PROF, &globalTimerVal);
 #endif
 	ThreadedAudioDevice *device = (ThreadedAudioDevice *) context;
-	if (setpriority(PRIO_PROCESS, 0, -20) != 0)
-	{
+//	if (setpriority(PRIO_PROCESS, 0, -20) != 0)
+//	{
 //			perror("ThreadedAudioDevice::_runProcess: Failed to set priority of thread.");
-	}
-	device->starting(false);	// Signal that the thread is now running
-	device->run();
+//	}
+//	device->starting(false);	// Signal that the thread is now running
+//	device->run();
 	return NULL;
 }

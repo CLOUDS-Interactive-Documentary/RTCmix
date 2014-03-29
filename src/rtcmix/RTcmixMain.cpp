@@ -313,12 +313,12 @@ RTcmixMain::parseArguments(int argc, char **argv, char **env)
 #endif
             case 'o':               /* NOTE NOTE NOTE: will soon replace -s */
             case 's':               /* set up a socket offset */
-               if (++i >= argc) {
-                  fprintf(stderr, "You didn't give a socket offset.\n");
-                  exit(1);
-               }
-               socknew = atoi(argv[i]);
-               printf("listening on socket: %d\n", MYPORT + socknew);
+               //if (++i >= argc) {
+               //   fprintf(stderr, "You didn't give a socket offset.\n");
+               //   exit(1);
+               //}
+               //socknew = atoi(argv[i]);
+               //printf("listening on socket: %d\n", MYPORT + socknew);
                break;
 //            case 's':               /* start time (unimplemented) */
             case 'd':               /* duration to play for (unimplemented) */

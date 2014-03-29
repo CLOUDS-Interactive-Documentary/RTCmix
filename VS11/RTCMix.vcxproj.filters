@@ -459,6 +459,15 @@
     <ClCompile Include="..\include\dirent.c">
       <Filter>include</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\audio\audio_devices.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\AudioFileDevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -694,6 +703,15 @@
     </ClInclude>
     <ClInclude Include="..\include\dirent.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_devices.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\AudioFileDevice.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\ThreadedAudioDevice.h">
+      <Filter>src\audio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

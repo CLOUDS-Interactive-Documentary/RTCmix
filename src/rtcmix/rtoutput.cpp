@@ -8,7 +8,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <errno.h>
 #include <sndlibsupport.h>
 #include "AudioDevice.h"

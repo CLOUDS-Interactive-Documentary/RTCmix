@@ -85,7 +85,10 @@
     <ClCompile Include="..\genlib\tableset.c" />
     <ClCompile Include="..\genlib\wshape.c" />
     <ClCompile Include="..\include\dirent.c" />
+    <ClCompile Include="..\src\audio\AudioFileDevice.cpp" />
+    <ClCompile Include="..\src\audio\audio_devices.cpp" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
+    <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
     <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp" />
     <ClCompile Include="..\src\rtcmix\addrtInst.cpp" />
     <ClCompile Include="..\src\rtcmix\buffers.cpp" />
@@ -200,7 +203,10 @@
     <ClInclude Include="..\include\rt_types.h" />
     <ClInclude Include="..\include\times.h" />
     <ClInclude Include="..\include\ugens.h" />
+    <ClInclude Include="..\src\audio\AudioFileDevice.h" />
+    <ClInclude Include="..\src\audio\audio_devices.h" />
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
+    <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
     <ClInclude Include="..\src\include\maxdispargs.h" />
     <ClInclude Include="..\src\rtcmix\atomic_stack.h" />
     <ClInclude Include="..\src\rtcmix\buffers.h" />

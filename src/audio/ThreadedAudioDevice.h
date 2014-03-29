@@ -7,8 +7,8 @@
 #define _THREADEDAUDIODEVICE_H_
 
 #include "AudioDeviceImpl.h"
-#include <pthread.h>
-#include <sys/select.h>
+//#include <pthread.h>
+//#include <sys/select.h>
 
 class ThreadedAudioDevice : public AudioDeviceImpl {
 protected:
@@ -47,8 +47,8 @@ private:
 	inline void	setFDSet();
 private:
 	int			_device;
-	fd_set		_rfdset, _wfdset;
-	pthread_t	_thread;
+//	fd_set		_rfdset, _wfdset;
+//	pthread_t	_thread;
 	int			_frameCount;
 	bool		_starting;
 	bool		_paused;
