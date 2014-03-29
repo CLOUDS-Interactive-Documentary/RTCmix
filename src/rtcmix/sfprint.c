@@ -1,7 +1,11 @@
 #include "sfheader.h"
 #include "ugens.h"
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <sys/file.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
 static SFCODE	ampcode = {

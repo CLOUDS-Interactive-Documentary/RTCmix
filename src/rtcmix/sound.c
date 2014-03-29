@@ -36,12 +36,22 @@
 #include "dbug.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/file.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#include <fcntl.h>
+#include "times.h"
+#define close _close
+#define lseek _lseek
+#else
 #include <sys/time.h>
 #include <sys/times.h>
+#include <unistd.h>
+#include <sys/file.h>
+#endif
+
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <string.h>
 #include <Option.h>
 
@@ -174,12 +184,12 @@ double m_open(float *p, short n_args, double *pp)
 			closesf();
 		}
 		if((peakloc[fno] = (char *)malloc((unsigned)(sfchans(&sfdesc[fno]) * 
-			LONG))) == NULL) {
+			RT_LONG_SIZE))) == NULL) {
 			rtcmix_warn("CMIX", "malloc ovpeak buffer error\n");
 			closesf();
 		}
 		if((peak[fno] = 
-			(char *)malloc((unsigned)(sfchans(&sfdesc[fno])* FLOAT))) 
+			(char *)malloc((unsigned)(sfchans(&sfdesc[fno])* RT_FLOAT_SIZE))) 
 			== NULL) {
 			rtcmix_warn("CMIX", "malloc peak buffer error!\n");
 			closesf();
@@ -187,7 +197,7 @@ double m_open(float *p, short n_args, double *pp)
 		peakoff[fno] = 0; /* default to peakcheckon when opening file*/
 		punch[fno] = 0; /* default to no punch when opening file*/
 	}
-	if(sfclass(&sfdesc[fno]) == SHORT) {
+	if(sfclass(&sfdesc[fno]) == RT_SHORT_SIZE) {
 		addoutpointer[fno] = _iaddout;
 		layoutpointer[fno] = _ilayout;
 		wipeoutpointer[fno] = _iwipeout;
@@ -255,7 +265,7 @@ setnote(float start, float dur, int fno)
 
 	_readit(fno);   /* read in first buffer */
 
-	for(i=0; i<(sfchans(&sfdesc[fno]) * FLOAT); i++)
+	for(i=0; i<(sfchans(&sfdesc[fno]) * RT_FLOAT_SIZE); i++)
 		*(peak[fno] + i) = 0;
 
 	wipe_is_off[fno] = 1;          /* for wipeout */
@@ -455,7 +465,7 @@ refill:	todo = ((pointer[fno] + size) > len)
 				? len - pointer[fno] : size;
 
         /* If it's a short */
-	if(sfclass(&sfdesc[fno]) == SHORT) {
+	if(sfclass(&sfdesc[fno]) == RT_SHORT_SIZE) {
 	  for(i=0,ibuf = (short *)sndbuf[fno] + pointer[fno];i<todo;i++) {
 	    *(input++) = (float) *(ibuf++);
 	  }
@@ -537,7 +547,7 @@ baddout(float *out, int fno, int size)
  refill:	todo = ((pointer[fno] + size) > len) 
 		  ? len - pointer[fno] : size;
 	
-	if(sfclass(&sfdesc[fno]) == SHORT) {
+	if(sfclass(&sfdesc[fno]) == RT_SHORT_SIZE) {
 	  for(i=0,ibuf = (short *)sndbuf[fno] + pointer[fno];i<todo;i++) {
 	    *(ibuf++) += (short) *(out++);
 	  }
@@ -576,7 +586,7 @@ bwipeout(float *out, int fno, int size)
 refill:	todo = ((pointer[fno] + size) > len) 
 				? len - pointer[fno] : size;
 
-	if(sfclass(&sfdesc[fno]) == SHORT) {
+	if(sfclass(&sfdesc[fno]) == RT_SHORT_SIZE) {
 	  for(i=0,ibuf = (short *)sndbuf[fno] + pointer[fno];i<todo;i++) {
 	    *(ibuf++) = (short)*(out++);
 	  }
@@ -606,7 +616,11 @@ int
 endnote(int xno)
 {
 	struct timeval tp;	
-	struct timezone tzp;	
+#if defined(timezone)
+	struct timezone tzp;
+#else
+	int tzp;
+#endif
 	int i,j,final_bytes,fno;
 	float notepeak,*pk;
 	double total;
@@ -767,11 +781,11 @@ _chkpeak(int fno)
 	incr = sfchans(&sfdesc[fno]);
 	pkloc = (long *)peakloc[fno];
 
-	if(sfclass(&sfdesc[fno]) == SHORT) {
+	if(sfclass(&sfdesc[fno]) == RT_SHORT_SIZE) {
 		ibufx = ibuf = (short *)sndbuf[fno];
 		bufend = ibuf + pointer[fno]; /* to allow for final check */
 		currentloc = (long)
-				((filepointer[fno]-headersize[fno])/(SHORT * incr));
+				((filepointer[fno]-headersize[fno])/(RT_SHORT_SIZE * incr));
 		while(ibuf<bufend)  {
 			for(i=0; i<incr; i++)  {
 				if(ABS(*(ibuf + i)) > (int)*(pk+i)) {
@@ -787,7 +801,7 @@ _chkpeak(int fno)
 		fbufx = fbuf = (float *)sndbuf[fno];
 		fbufend = fbuf + pointer[fno];
 		currentloc = (long)
-				((filepointer[fno]-headersize[fno])/(FLOAT * incr));
+			((filepointer[fno]-headersize[fno])/(RT_FLOAT_SIZE * incr));
 		while(fbuf<fbufend) {
 			for(i=0; i<incr; i++)  {
 				if(ABS(*(fbuf + i)) > *(pk+i)) {
@@ -855,8 +869,8 @@ _readit(int fno)
 		}
 	}
 	if(((play_is_on==2) && !maxread) || ((play_is_on==3) && (status[fno])))
-	      bzero(sndbuf[fno],nbytes);  /* clean buffer out if not readin */
-
+	      //bzero(sndbuf[fno],nbytes);  /* clean buffer out if not readin */
+		memset(sndbuf[fno],0,nbytes);
 	/* Swap input buffer */
  	if(maxread && swap_bytes[fno]) {
 		/* SHORT file */

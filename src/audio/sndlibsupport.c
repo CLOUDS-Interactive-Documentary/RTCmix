@@ -30,10 +30,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include "times.h"
+#else
+#include <unistd.h>
 #include <sys/time.h>
+#endif
 #include <time.h>
 #include <sys/types.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <math.h>
 #include <errno.h>

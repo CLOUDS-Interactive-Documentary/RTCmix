@@ -1,7 +1,11 @@
 #include "ugens.h"
 #include "sfheader.h"
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <sndlibsupport.h>
 
 extern SFMAXAMP      sfm[NFILES];

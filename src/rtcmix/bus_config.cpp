@@ -13,7 +13,7 @@
 #include <RTcmix.h>
 #include "prototypes.h"
 #include "InputFile.h"
-#include <lock.h>
+//#include <lock.h>
 #include <Option.h>
   
 //#define PRINTPLAY

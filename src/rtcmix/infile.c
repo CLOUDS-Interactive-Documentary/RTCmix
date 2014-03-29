@@ -2,7 +2,9 @@
 */
 
 #include <stdio.h>
+#ifndef _MSC_VER
 #include <sys/file.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <ugens.h>

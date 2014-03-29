@@ -4,7 +4,7 @@
 */
 #define DBUG
 //#define DENORMAL_CHECK
-#include <pthread.h>
+//#include <pthread.h>
 #include <sys/resource.h>
 #include <ctype.h>
 #include <string.h>

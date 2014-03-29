@@ -1,7 +1,8 @@
 #ifndef _RTCMIX_H_
 #define _RTCMIX_H_
 
-#include <pthread.h>
+//JRG killing pthread
+//#include <pthread.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <signal.h>

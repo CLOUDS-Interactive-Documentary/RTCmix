@@ -1,7 +1,10 @@
 #include "ugens.h"
 #include "sfheader.h"
 #include <stdio.h>
+#ifdef _MSC_VER
+#else
 #include <sys/file.h>
+#endif
 #include <sys/types.h>
 
 double

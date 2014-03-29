@@ -4,7 +4,13 @@
 #include "ugens.h"
 #include "sfheader.h"
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+//nothing fo rnow
+#define fsync _commit
+#else
 #include <unistd.h>
+#endif
 
 /* these are all defined in sound.c */
 extern int  sfd[NFILES];            /* soundfile descriptors */

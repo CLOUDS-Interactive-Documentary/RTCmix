@@ -1,11 +1,20 @@
 #include <ugens.h>
 #include <sfheader.h>
 #include <stdio.h>
+
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#define lseek _lseek
+#else
 #include <unistd.h>
 #include <sys/file.h>
+#include <sys/time.h>
+
+#endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/time.h>
 #include <ugens.h>
 
 extern float SR;

@@ -15,7 +15,7 @@
 #elif defined(FREEBSD)
 #include <machine/endian.h>
 #else
-#error "This platform is not supported by sndlibsupport.h"
+//#error "This platform is not supported by sndlibsupport.h"
 #endif
 #include <stdio.h>          /* for FILE, needed by sndlib.h */
 #include <sndlib.h>

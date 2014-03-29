@@ -4,8 +4,16 @@
 #include <math.h>
 #include <ugens.h>
 #include <sys/types.h>
+#ifdef _MSC_VER
+ #if !defined(_SSIZE_T_) && !defined(_SSIZE_T_DEFINED)
+ typedef intptr_t ssize_t;
+ # define _SSIZE_T_
+ # define _SSIZE_T_DEFINED
+ #endif
+#define lseek _lseek
+#else
 #include <unistd.h>
-
+#endif
 
 #if defined(NeXT) && defined(i386)
 #include <architecture/byte_order.h>

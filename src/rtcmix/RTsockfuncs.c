@@ -1,16 +1,25 @@
 #include <stdlib.h>
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <stdarg.h>
 #include <string.h>
 #include <sys/types.h>
+#ifndef _MSC_VER
 #include <netdb.h>
+#endif
 #include <errno.h>
 #include <signal.h>
+#ifdef _MSC_VER
+#include <time.h>
+#else
 #include <sys/signal.h>
 #include <sys/time.h>
 #include <sys/socket.h>
-
+#endif
 #include <sockdefs.h>
 #include "RTsockfuncs.h"
 

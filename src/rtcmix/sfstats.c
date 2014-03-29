@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <string.h>
+
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#define lseek _lseek
+#else
 #include <sys/file.h>
-#include <sys/types.h>
 #include <unistd.h>
+#endif
+
+#include <sys/types.h>
 #include <sys/stat.h>
 #include <signal.h>
 #include <errno.h>

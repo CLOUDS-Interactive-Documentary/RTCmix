@@ -2,10 +2,15 @@
 #include "sfheader.h"
 #include "ugens.h"
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#else
 #include <sys/file.h>
+#include <sys/time.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/time.h>
 #include <time.h>
 
 #define MAX_TIME_CHARS  64

@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 void rsnset(float SR, float cf, float bw, float scl, float xinit, float a[])

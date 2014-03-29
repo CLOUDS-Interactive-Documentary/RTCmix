@@ -10,11 +10,12 @@
 #define BUFTYPE float           /* could be double some day */
 typedef BUFTYPE *BufPtr;
 
-#if BUFTYPE == float
+//JG Gonna be a float
+//#if BUFTYPE == float
 #define ZERO 0.0f
-#else
-#define ZERO 0.0
-#endif
+//#else
+//#define ZERO 0.0
+//#endif
 
 /* type for frame counts (Inst start and end points) */
 #define FRAMETYPE long long
@@ -32,10 +33,10 @@ typedef enum {
 #define      PI2    6.2831853
 #endif
 
-#define FLOAT (sizeof(float))   /* nbytes in floating point word*/
-#define INT   (sizeof(int))   /* nbytes in integer word */
-#define SHORT (sizeof(short))
-#define LONG  (sizeof(long))
+#define RT_FLOAT_SIZE (sizeof(float))   /* nbytes in floating point word*/
+#define RT_INT_SIZE   (sizeof(int))   /* nbytes in integer word */
+#define RT_SHORT_SIZE (sizeof(short))
+#define RT_LONG_SIZE  (sizeof(long))
 
 #ifdef __cplusplus
 
