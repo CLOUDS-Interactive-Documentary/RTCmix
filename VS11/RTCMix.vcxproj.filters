@@ -22,6 +22,9 @@
     <Filter Include="src\include">
       <UniqueIdentifier>{273434ac-975f-4d9c-ab4f-0fb06932f939}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\rtcmix\heap">
+      <UniqueIdentifier>{50a575de-4b3a-4d8c-97e9-e72c93982f19}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\genlib\reverb.c">
@@ -456,6 +459,9 @@
     <ClCompile Include="..\src\sndlib\io.c">
       <Filter>src\sndlib</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\rtcmix\heap\heap.cpp">
+      <Filter>src\rtcmix\heap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -691,6 +697,9 @@
     </ClInclude>
     <ClInclude Include="..\src\include\maxdispargs.h">
       <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\heap\heap.h">
+      <Filter>src\rtcmix\heap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -124,15 +124,15 @@ RTcmix::print_parents() {
   int i;
   RTPrintfCat("Aux buses w/o aux inputs:  ");
   for(i=0;i<MAXBUS;i++) {
-	pthread_mutex_lock(&aux_in_use_lock);
+	//pthread_mutex_lock(&aux_in_use_lock);
 	if (AuxInUse[i]) {
-	  pthread_mutex_lock(&has_parent_lock);
+	  //pthread_mutex_lock(&has_parent_lock);
 	  if (!HasParent[i]) {
 		RTPrintfCat(" %d",i);
 	  }
-	  pthread_mutex_unlock(&has_parent_lock);
+	  //pthread_mutex_unlock(&has_parent_lock);
 	}
-	pthread_mutex_unlock(&aux_in_use_lock);
+	//pthread_mutex_unlock(&aux_in_use_lock);
   }
   RTPrintf("\n");
 }
@@ -143,15 +143,15 @@ RTcmix::print_children() {
   int i;
   RTPrintfCat("Aux buses w/o aux outputs:  "); 
   for(i=0;i<MAXBUS;i++) {
-	pthread_mutex_lock(&aux_in_use_lock);
+//	pthread_mutex_lock(&aux_in_use_lock);
 	if (AuxInUse[i]) {
-	  pthread_mutex_lock(&has_child_lock);
+//	  pthread_mutex_lock(&has_child_lock);
 	  if (!HasChild[i]) {
 		RTPrintfCat(" %d",i);
 	  }
-	  pthread_mutex_unlock(&has_child_lock);
+//	  pthread_mutex_unlock(&has_child_lock);
 	}
-	pthread_mutex_unlock(&aux_in_use_lock);
+//	pthread_mutex_unlock(&aux_in_use_lock);
   }
   RTPrintf("\n");
 }
@@ -184,9 +184,9 @@ RTcmix::print_inst_bus_config() {
    BusQueue *qEntry;
    BusSlot *check_slot;
 
-   pthread_mutex_lock(&inst_bus_config_lock);
+//   pthread_mutex_lock(&inst_bus_config_lock);
    qEntry = Inst_Bus_Config;
-   pthread_mutex_unlock(&inst_bus_config_lock);
+//   pthread_mutex_unlock(&inst_bus_config_lock);
 
    while (qEntry) {
 
@@ -213,11 +213,11 @@ RTcmix::print_play_order() {
   int i;
   RTPrintfCat("Output buffer playback order:  ");
   for(i=0;i<MAXBUS;i++) {
-	pthread_mutex_lock(&aux_to_aux_lock);
+//	pthread_mutex_lock(&aux_to_aux_lock);
 	if (AuxToAuxPlayList[i] != -1) {
 	  RTPrintfCat(" %d",AuxToAuxPlayList[i]);
 	}
-	pthread_mutex_unlock(&aux_to_aux_lock);
+//	pthread_mutex_unlock(&aux_to_aux_lock);
   }
   RTPrintf("\n");
 }
@@ -237,18 +237,18 @@ RTcmix::check_bus_inst_config(BusSlot *slot, Bool visit) {
 
 	/* If we haven't gotten a config yet ... allocate the graph array */
 	/* and the playback order list */
-	Bus_Config_Status.lock();
+//	Bus_Config_Status.lock();
 	if (Bus_Config_Status == NO) {
 		for (i=0;i<MAXBUS;i++) {
 			CheckNode *t_node = new CheckNode;
-			pthread_mutex_lock(&bus_in_config_lock);
+//			pthread_mutex_lock(&bus_in_config_lock);
 			Bus_In_Config[i] = t_node;
 			t_node->ref();
-			pthread_mutex_unlock(&bus_in_config_lock);
+//			pthread_mutex_unlock(&bus_in_config_lock);
 		}
 		Bus_Config_Status = YES;
 	}
-	Bus_Config_Status.unlock();
+//	Bus_Config_Status.unlock();
 
 	aux_ctr = out_ctr = 0;
 	j=0;
@@ -256,23 +256,23 @@ RTcmix::check_bus_inst_config(BusSlot *slot, Bool visit) {
 		if (visit)
 			Visited[i] = NO;
 		Checked[i] = NO;
-		pthread_mutex_lock(&revplay_lock);
+	//	pthread_mutex_lock(&revplay_lock);
 		RevPlay[i] = -1;
-		pthread_mutex_unlock(&revplay_lock);
-		pthread_mutex_lock(&out_in_use_lock);
+	//	pthread_mutex_unlock(&revplay_lock);
+	//	pthread_mutex_lock(&out_in_use_lock);
 		if (OutInUse[i]) {  // DJT For scheduling
-			pthread_mutex_lock(&to_out_lock);
+	//		pthread_mutex_lock(&to_out_lock);
 			ToOutPlayList[out_ctr++] = i;
-			pthread_mutex_unlock(&to_out_lock);
+	//		pthread_mutex_unlock(&to_out_lock);
 		}
-		pthread_mutex_unlock(&out_in_use_lock);
-		pthread_mutex_lock(&aux_out_in_use_lock);
+	//	pthread_mutex_unlock(&out_in_use_lock);
+	//	pthread_mutex_lock(&aux_out_in_use_lock);
 		if (AuxOutInUse[i]) {
-			pthread_mutex_lock(&to_aux_lock);
+	//		pthread_mutex_lock(&to_aux_lock);
 			ToAuxPlayList[aux_ctr++] = i;
-			pthread_mutex_unlock(&to_aux_lock);
+	//		pthread_mutex_unlock(&to_aux_lock);
 		}
-		pthread_mutex_unlock(&aux_out_in_use_lock);
+	//	pthread_mutex_unlock(&aux_out_in_use_lock);
 	}
 
 	/* Put the slot being checked on the list of "to be checked" */
@@ -308,27 +308,27 @@ RTcmix::check_bus_inst_config(BusSlot *slot, Bool visit) {
 			/* If this input channel has other input channels */
 			/* put them on the list "to be checked" */
 
-			pthread_mutex_lock(&bus_in_config_lock);
+	//		pthread_mutex_lock(&bus_in_config_lock);
 			if ((Bus_In_Config[t_in]->bus_count > 0) && !Visited[t_in]) {
 #ifdef PRINTALL
 				RTPrintf("check_bus_inst_config: adding Bus[%d] to list\n",t_in);
 #endif
-				pthread_mutex_lock(&has_parent_lock);
+	//			pthread_mutex_lock(&has_parent_lock);
 				if (HasParent[t_in]) {
 #ifdef PRINTPLAY
 					RTPrintf("check_bus_inst_config: RevPlay[%d] = %d\n",r_p_count,t_in);
 #endif
-					pthread_mutex_lock(&revplay_lock);
+	//				pthread_mutex_lock(&revplay_lock);
 					RevPlay[r_p_count++] = t_in;
-					pthread_mutex_unlock(&revplay_lock);
+	//				pthread_mutex_unlock(&revplay_lock);
 				}
-				pthread_mutex_unlock(&has_parent_lock);
+	//			pthread_mutex_unlock(&has_parent_lock);
 				Visited[t_in] = YES;
 				CheckQueue *t_queue = new CheckQueue(Bus_In_Config[t_in]);
 				last->next = t_queue;
 				last = t_queue;
 			}
-			pthread_mutex_unlock(&bus_in_config_lock);
+	//		pthread_mutex_unlock(&bus_in_config_lock);
 		}
 #ifdef PRINTALL
 		RTPrintf("check_bus_inst_config: popping ...\n");
@@ -363,59 +363,59 @@ RTcmix::insert_bus_slot(char *name, BusSlot *slot) {
 	/* Insert into bus graph */
 	for(i=0;i<slot->auxout_count;i++) {
 		s_out = slot->auxout[i];
-		pthread_mutex_lock(&aux_in_use_lock);
+	//	pthread_mutex_lock(&aux_in_use_lock);
 		if (!AuxInUse[s_out]) {
 			AuxInUse[s_out] = YES;
 		}
-		pthread_mutex_unlock(&aux_in_use_lock);
+	//	pthread_mutex_unlock(&aux_in_use_lock);
 		for(j=0;j<slot->auxin_count;j++) {
 			s_in = slot->auxin[j];
-			pthread_mutex_lock(&has_parent_lock);
+	//		pthread_mutex_lock(&has_parent_lock);
 			if ((!HasParent[s_out]) && (s_in != 333)) {
 #ifdef PRINTALL
 				RTPrintf("insert_bus_slot: HasParent[%d]\n",s_out);
 #endif
 				HasParent[s_out] = YES;
 			}
-			pthread_mutex_unlock(&has_parent_lock);
+	//		pthread_mutex_unlock(&has_parent_lock);
 
-			pthread_mutex_lock(&bus_in_config_lock);
+	//		pthread_mutex_lock(&bus_in_config_lock);
 			t_in_count = Bus_In_Config[s_out]->bus_count;
-			pthread_mutex_unlock(&bus_in_config_lock);
+	//		pthread_mutex_unlock(&bus_in_config_lock);
 #ifdef PRINTALL
 			RTPrintf("insert_bus_slot: Inserting Bus_In[%d] = %d\n",s_out,s_in);
 #endif
 			if (s_in != 333) {
-				pthread_mutex_lock(&bus_in_config_lock);
+		//		pthread_mutex_lock(&bus_in_config_lock);
 				Bus_In_Config[s_out]->bus_list[t_in_count] = s_in;
 				Bus_In_Config[s_out]->bus_count++;
 
 // BGG -- my bus-wrapping hackeroo!  go brad go!  :-)
 				if (Bus_In_Config[s_out]->bus_count >= MAXBUS)
 					Bus_In_Config[s_out]->bus_count = 0;
-				pthread_mutex_unlock(&bus_in_config_lock);
-				pthread_mutex_lock(&has_child_lock);
+//				pthread_mutex_unlock(&bus_in_config_lock);
+//				pthread_mutex_lock(&has_child_lock);
 				HasChild[s_in] = YES;
-				pthread_mutex_unlock(&has_child_lock);
-				pthread_mutex_lock(&aux_in_use_lock);
+//				pthread_mutex_unlock(&has_child_lock);
+//				pthread_mutex_lock(&aux_in_use_lock);
 				AuxInUse[s_in] = YES;
-				pthread_mutex_unlock(&aux_in_use_lock);
+//				pthread_mutex_unlock(&aux_in_use_lock);
 			}
 		}
 	}
 
 	/* Create initial node for Inst_Bus_Config */
-	pthread_mutex_lock(&inst_bus_config_lock);
+//	pthread_mutex_lock(&inst_bus_config_lock);
 	if (Inst_Bus_Config == NULL) {
 		Inst_Bus_Config = new BusQueue(name, slot);
-		pthread_mutex_unlock(&inst_bus_config_lock);
+//		pthread_mutex_unlock(&inst_bus_config_lock);
 		return NO_ERR;
 	}
 
 	BusQueue *qEntry = Inst_Bus_Config;
-	pthread_mutex_unlock(&inst_bus_config_lock);
+//	pthread_mutex_unlock(&inst_bus_config_lock);
 
-	Lock lock(&inst_bus_config_lock);	// unlocks when out of scope
+//	Lock lock(&inst_bus_config_lock);	// unlocks when out of scope
 	/* Traverse down each list */
 	while (qEntry) {	
 		/* If names match, then put onto the head of the slot's list */
@@ -472,46 +472,46 @@ RTcmix::create_play_order() {
 
   /* Put all the parents on */
   for(i=0;i<MAXBUS;i++) {
-	pthread_mutex_lock(&aux_in_use_lock);
+//	pthread_mutex_lock(&aux_in_use_lock);
 	if (AuxInUse[i]) {
-	  pthread_mutex_lock(&has_parent_lock);
+//	  pthread_mutex_lock(&has_parent_lock);
 	  if (!HasParent[i]) {
 #ifdef PRINTPLAY
 		RTPrintf("create_play_order: AuxPlay[%d] = %d\n",aux_p_count,i);
 #endif
-		pthread_mutex_lock(&aux_to_aux_lock);
+//		pthread_mutex_lock(&aux_to_aux_lock);
 		AuxToAuxPlayList[aux_p_count++] = i;
-		pthread_mutex_unlock(&aux_to_aux_lock);
+//		pthread_mutex_unlock(&aux_to_aux_lock);
 	  }
-	  pthread_mutex_unlock(&has_parent_lock);
+//	  pthread_mutex_unlock(&has_parent_lock);
 	}
-	pthread_mutex_unlock(&aux_in_use_lock);
+//	pthread_mutex_unlock(&aux_in_use_lock);
   }
   for (i=0;i<MAXBUS;i++) {
-	pthread_mutex_lock(&aux_in_use_lock);
+//	pthread_mutex_lock(&aux_in_use_lock);
 	if (AuxInUse[i]) {
-	  pthread_mutex_lock(&has_child_lock);
+//	  pthread_mutex_lock(&has_child_lock);
 	  if (!HasChild[i]) {
 		bf_traverse(i,visit);
 		if (visit) 
 		  visit = NO;
 		for (j=MAXBUS-1;j>=0;j--) {
-		  pthread_mutex_lock(&revplay_lock);
+//		  pthread_mutex_lock(&revplay_lock);
 		  if (RevPlay[j] != -1) {
 #ifdef PRINTPLAY
 			RTPrintf("create_play_order: AuxPlay[%d](%d) = Rev[%d](%d)\n",
 					aux_p_count,AuxToAuxPlayList[aux_p_count],j,RevPlay[j]);
 #endif
-			pthread_mutex_lock(&aux_to_aux_lock);
+//			pthread_mutex_lock(&aux_to_aux_lock);
 			AuxToAuxPlayList[aux_p_count++] = RevPlay[j];
-			pthread_mutex_unlock(&aux_to_aux_lock);
+//			pthread_mutex_unlock(&aux_to_aux_lock);
 		  }
-		  pthread_mutex_unlock(&revplay_lock);
+//		  pthread_mutex_unlock(&revplay_lock);
 		}
 	  }
-	  pthread_mutex_unlock(&has_child_lock);
+//	  pthread_mutex_unlock(&has_child_lock);
 	}
-	pthread_mutex_unlock(&aux_in_use_lock);
+//	pthread_mutex_unlock(&aux_in_use_lock);
   }
 }
 
@@ -532,57 +532,57 @@ RTcmix::get_bus_config(const char *inst_name)
 
    slot = NULL;
 
-   Lock lock(&bus_slot_lock);	// unlocks when out of scope
+//   Lock lock(&bus_slot_lock);	// unlocks when out of scope
 
    /* Maybe also need to lock q since it's accessing a BusSlot */
    /* that intraverse might also be checking? */
    /* But the values don't change, so I don't see why */
 
-   pthread_mutex_lock(&inst_bus_config_lock);
+//   pthread_mutex_lock(&inst_bus_config_lock);
    for (q = Inst_Bus_Config; q; q = q->next) {
 	 if (strcmp(inst_name, q->instName()) == 0) {
-	   pthread_mutex_unlock(&inst_bus_config_lock);   
+//	   pthread_mutex_unlock(&inst_bus_config_lock);   
 	   return q->slot;
 	 }
    }
-   pthread_mutex_unlock(&inst_bus_config_lock);
+//   pthread_mutex_unlock(&inst_bus_config_lock);
    
    /* Default bus_config for backwards compatibility with < 3.0 scores */
    
    rtcmix_advise(NULL, "No bus_config defined, setting default (in/out).");
    
    /* Some init stuff normally done in check_bus_inst_config */
-   Bus_Config_Status.lock();
+//   Bus_Config_Status.lock();
    if (Bus_Config_Status == NO) {
 	 for (i=0;i<MAXBUS;i++) {
-	   pthread_mutex_lock(&aux_to_aux_lock);
+//	   pthread_mutex_lock(&aux_to_aux_lock);
 	   AuxToAuxPlayList[i] = -1;
-	   pthread_mutex_unlock(&aux_to_aux_lock);
-	   pthread_mutex_lock(&to_aux_lock);
+//	   pthread_mutex_unlock(&aux_to_aux_lock);
+//	   pthread_mutex_lock(&to_aux_lock);
 	   ToAuxPlayList[i] = -1;
-	   pthread_mutex_unlock(&to_aux_lock);
-	   pthread_mutex_lock(&to_out_lock);
+//	   pthread_mutex_unlock(&to_aux_lock);
+//	   pthread_mutex_lock(&to_out_lock);
 	   ToOutPlayList[i] = -1;
-	   pthread_mutex_unlock(&to_out_lock);
-	   pthread_mutex_lock(&out_in_use_lock);
+//	   pthread_mutex_unlock(&to_out_lock);
+//	   pthread_mutex_lock(&out_in_use_lock);
 	   OutInUse[i] = NO;
-	   pthread_mutex_unlock(&out_in_use_lock);
+//	   pthread_mutex_unlock(&out_in_use_lock);
 	   // Added this initialization as well -- DS 5/2005
 	   CheckNode *t_node = new CheckNode;
-	   pthread_mutex_lock(&bus_in_config_lock);
+//	   pthread_mutex_lock(&bus_in_config_lock);
 	   Bus_In_Config[i] = t_node;
 	   t_node->ref();
-	   pthread_mutex_unlock(&bus_in_config_lock);
+//	   pthread_mutex_unlock(&bus_in_config_lock);
 	 }
 	 Bus_Config_Status = YES;
    }
    Bus_Config_Status.unlock();
 
    for(i=0;i<NCHANS;i++) {
-	 pthread_mutex_lock(&out_in_use_lock);
+//	 pthread_mutex_lock(&out_in_use_lock);
 	 OutInUse[i] = YES;
-	 pthread_mutex_unlock(&out_in_use_lock);
-	 pthread_mutex_lock(&to_out_lock);
+//	 pthread_mutex_unlock(&out_in_use_lock);
+//	 pthread_mutex_lock(&to_out_lock);
 	 ToOutPlayList[i] = i;
 	 pthread_mutex_unlock(&to_out_lock);
    }
@@ -706,7 +706,7 @@ void
 RTcmix::addToBus(BusType type, int bus, BufPtr src, int offset, int endfr, int chans)
 {
 	register BufPtr dest;
-	pthread_mutex_t *pMutex;
+//	pthread_mutex_t *pMutex;
 	
 	if (type == BUS_AUX_OUT) {
 		dest = aux_buffer[bus];
@@ -819,7 +819,7 @@ RTcmix::bus_config(float p[], int n_args, double pp[])
 
    inbusses[0] = outbusses[0] = '\0';
    
-   Lock localLock(&bus_slot_lock);	// This will unlock when going out of scope.
+//   Lock localLock(&bus_slot_lock);	// This will unlock when going out of scope.
 
    /* do the old Minc casting rigamarole to get string pointers from a double */
    str = DOUBLE_TO_STRING(pp[0]);
@@ -870,9 +870,9 @@ RTcmix::bus_config(float p[], int n_args, double pp[])
             j = bus_slot->out_count;
             for (k = startchan; k <= endchan; k++) {
                bus_slot->out[j++] = k;
-			   pthread_mutex_lock(&out_in_use_lock);
+//			   pthread_mutex_lock(&out_in_use_lock);
                OutInUse[k] = YES;  // DJT added
-			   pthread_mutex_unlock(&out_in_use_lock);
+//			   pthread_mutex_unlock(&out_in_use_lock);
             }
             bus_slot->out_count += (endchan - startchan) + 1;
 
@@ -915,9 +915,9 @@ RTcmix::bus_config(float p[], int n_args, double pp[])
             j = bus_slot->auxout_count;
             for (k = startchan; k <= endchan; k++) {
                bus_slot->auxout[j++] = k;
-			   pthread_mutex_lock(&aux_out_in_use_lock);
+//			   pthread_mutex_lock(&aux_out_in_use_lock);
                AuxOutInUse[k] = YES;
-			   pthread_mutex_unlock(&aux_out_in_use_lock);
+//			   pthread_mutex_unlock(&aux_out_in_use_lock);
             }
             bus_slot->auxout_count += (endchan - startchan) + 1;
             break;

@@ -7,7 +7,11 @@
 #include <errno.h>
 #include <string.h>
 #include <stdint.h>		// for int32_t, etc.
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <RTcmix.h>
 #include <rtcmix_types.h>
 #include "prototypes.h"

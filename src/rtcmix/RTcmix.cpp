@@ -12,13 +12,22 @@
 
 //#define DBUG
 //#define DENORMAL_CHECK
-#include <pthread.h>
-#include <sys/resource.h>
+//#include <pthread.h>
+
+//#include <sys/resource.h>
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <time.h>
+#include "times.h"
+#include <io.h>
+#else
 #include <unistd.h>
 #include <sys/time.h>
+#endif
+
 #include <string.h>
 #include <signal.h>
 
@@ -95,20 +104,20 @@ int			RTcmix::rtoutfile 	= 0;
 InputFile *	RTcmix::inputFileTable = NULL;
 long		RTcmix::max_input_fds = 0;
 
-pthread_mutex_t RTcmix::pfieldLock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::audio_config_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::aux_to_aux_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::to_aux_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::to_out_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::inst_bus_config_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::bus_in_config_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::has_child_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::has_parent_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::aux_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::aux_out_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::out_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::revplay_lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t RTcmix::bus_slot_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::pfieldLock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::audio_config_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::aux_to_aux_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::to_aux_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::to_out_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::inst_bus_config_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::bus_in_config_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::has_child_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::has_parent_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::aux_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::aux_out_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::out_in_use_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::revplay_lock = PTHREAD_MUTEX_INITIALIZER;
+//pthread_mutex_t RTcmix::bus_slot_lock = PTHREAD_MUTEX_INITIALIZER;
 
 short			RTcmix::AuxToAuxPlayList[MAXBUS];
 short			RTcmix::ToOutPlayList[MAXBUS];
@@ -125,7 +134,8 @@ pthread_mutex_t RTcmix::vectorLock = PTHREAD_MUTEX_INITIALIZER;
 // Bus config state
 
 BusQueue *		RTcmix::Inst_Bus_Config;
-Locked<Bool>	RTcmix::Bus_Config_Status(NO);
+//Locked<Bool>	RTcmix::Bus_Config_Status(NO);
+Bool			RTcmix::Bus_Config_Status;
 CheckNode *		RTcmix::Bus_In_Config[MAXBUS];
 Bool			RTcmix::HasChild[MAXBUS];
 Bool			RTcmix::HasParent[MAXBUS];

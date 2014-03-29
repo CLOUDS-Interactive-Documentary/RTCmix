@@ -10,7 +10,11 @@
 #include <RTcmix.h>
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <math.h>
 #include <errno.h>
 #include <assert.h>
@@ -92,9 +96,9 @@ RTcmix::rtsetparams(float p[], int n_args, double pp[])
    }
 
    /* inTraverse waits for this. Set it even if play_audio is false! */
-   pthread_mutex_lock(&audio_config_lock);
+   //pthread_mutex_lock(&audio_config_lock);
    audio_config = 1;
-   pthread_mutex_unlock(&audio_config_lock);
+   //pthread_mutex_unlock(&audio_config_lock);
 
    rtcmix_advise("Audio set",  "%g sampling rate, %d channels", SR, NCHANS);
 

@@ -5,7 +5,7 @@
 #include <RTcmix.h>
 #include "prototypes.h"
 #include <maxdispargs.h>
-#include <pthread.h>
+//#include <pthread.h>
 #include <Instrument.h>
 #include <PField.h>
 #include <PFieldSet.h>

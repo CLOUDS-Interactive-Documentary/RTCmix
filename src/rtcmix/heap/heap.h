@@ -1,8 +1,9 @@
 #ifndef _HEAP_H_
 #define _HEAP_H_ 1
 
+#include <stdio.h>
 #include <rt_types.h>
-#include <Lockable.h>
+//#include <Lockable.h>
 
 class Instrument;
 
@@ -50,7 +51,7 @@ public:
 
 // class for main heap structure
 
-class heap : public Lockable {
+class heap /*: public Lockable*/ {
 private:
   rtqueue leaves;  // queue used to hold next insertion point
 public:

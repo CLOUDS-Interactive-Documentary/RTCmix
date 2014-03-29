@@ -7,7 +7,7 @@
 #ifndef INPUTDESC_H
 #define INPUTDESC_H
 
-#include "Lockable.h"
+//#include "Lockable.h"
 #include "rt_types.h"
 #include <sys/types.h>
 #include <string.h>
@@ -15,7 +15,7 @@
 typedef int (*ReadFun)(int,int,int,off_t,long,BufPtr,int,int,const short[],short,void*);
 
 /* definition of input file struct used by rtinput */
-struct InputFile : public Lockable {
+struct InputFile {
 public:
 	enum Type { FileType = 0, AudioDeviceType = 1, InMemoryType = 2 };
 #ifdef MULTI_THREAD

@@ -7,7 +7,12 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
+
 #include <string.h>  /* for strerror */
 #include <math.h>    /* for fabs */
 #include <errno.h>

@@ -4,7 +4,7 @@
 */
 #include <RTcmix.h>
 #include "prototypes.h"
-#include <pthread.h>
+//#include <pthread.h>
 #ifndef MAXMSP
 #include <iostream>
 #endif

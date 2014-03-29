@@ -7,10 +7,10 @@
 #define _BUSSLOT_H_
 
 #include <RefCounted.h>
-#include <Lockable.h>
+//#include <Lockable.h>
 #include <bus.h>
 
-class BusSlot : public RefCounted, public Lockable {
+class BusSlot : public RefCounted/*, public Lockable*/ {
 public:
 	BusSlot();
 	inline		IBusClass Class() const;

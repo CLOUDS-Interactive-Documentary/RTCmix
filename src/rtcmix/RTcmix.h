@@ -10,7 +10,7 @@
 #include <rtdefs.h>
 #include <rt_types.h>
 #include <bus.h>
-#include "Locked.h"
+//#include "Locked.h"
 #ifdef MULTI_THREAD
 #include <vector>
 #endif
@@ -189,7 +189,7 @@ protected:
 
 	static RTstatus	run_status;
 
-	static pthread_mutex_t audio_config_lock;
+//	static pthread_mutex_t audio_config_lock;
 
 private:
 	// Buffer alloc routines.
@@ -240,19 +240,19 @@ private:
 public:
 	static rt_item *rt_list;
 private:
-	static pthread_mutex_t pfieldLock;
-	static pthread_mutex_t aux_to_aux_lock;
-	static pthread_mutex_t to_aux_lock;
-	static pthread_mutex_t to_out_lock;
-	static pthread_mutex_t inst_bus_config_lock;
-	static pthread_mutex_t bus_in_config_lock;
-	static pthread_mutex_t has_child_lock;
-	static pthread_mutex_t has_parent_lock;
-	static pthread_mutex_t aux_in_use_lock;
-	static pthread_mutex_t aux_out_in_use_lock;
-	static pthread_mutex_t out_in_use_lock;
-	static pthread_mutex_t revplay_lock;
-	static pthread_mutex_t bus_slot_lock;
+	//static pthread_mutex_t pfieldLock;
+	//static pthread_mutex_t aux_to_aux_lock;
+	//static pthread_mutex_t to_aux_lock;
+	//static pthread_mutex_t to_out_lock;
+	//static pthread_mutex_t inst_bus_config_lock;
+	//static pthread_mutex_t bus_in_config_lock;
+	//static pthread_mutex_t has_child_lock;
+	//static pthread_mutex_t has_parent_lock;
+	//static pthread_mutex_t aux_in_use_lock;
+	//static pthread_mutex_t aux_out_in_use_lock;
+	//static pthread_mutex_t out_in_use_lock;
+	//static pthread_mutex_t revplay_lock;
+	//static pthread_mutex_t bus_slot_lock;
 
 	static int		rtrecord;
 	static int		rtfileit;		// 1 if rtoutput() succeeded
@@ -303,7 +303,8 @@ private:
 
 	/* Flag to tell us if we've gotten any configs */
 	/* Used to initialize Bus_In_Config inside check_bus_inst_config */
-	static Locked<Bool> Bus_Config_Status;
+	//static Locked<Bool> Bus_Config_Status;
+	static Bool Bus_Config_Status;
 
 	/* Bus graph, parsed by check_bus_inst_config */
 	/* Allows loop checking ... and buffer playback order? */

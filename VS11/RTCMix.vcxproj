@@ -99,6 +99,7 @@
     <ClCompile Include="..\src\rtcmix\filter.cpp" />
     <ClCompile Include="..\src\rtcmix\funderflow.c" />
     <ClCompile Include="..\src\rtcmix\getsample.c" />
+    <ClCompile Include="..\src\rtcmix\heap\heap.cpp" />
     <ClCompile Include="..\src\rtcmix\infile.c" />
     <ClCompile Include="..\src\rtcmix\InputFile.cpp" />
     <ClCompile Include="..\src\rtcmix\Instrument.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="..\src\rtcmix\DynamicLib.h" />
     <ClInclude Include="..\src\rtcmix\Functor.h" />
     <ClInclude Include="..\src\rtcmix\globals.h" />
+    <ClInclude Include="..\src\rtcmix\heap\heap.h" />
     <ClInclude Include="..\src\rtcmix\InputFile.h" />
     <ClInclude Include="..\src\rtcmix\Instrument.h" />
     <ClInclude Include="..\src\rtcmix\load_utils.h" />
@@ -318,7 +320,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -346,7 +348,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

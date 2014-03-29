@@ -7,7 +7,7 @@
 
 #include <RefCounted.h>
 #include <bus.h>
-#include <Locked.h>
+//#include <Locked.h>
 #include <rt_types.h>
 #include <sys/types.h>
 #include "rtdefs.h"
@@ -44,7 +44,8 @@ protected:
    int            cursamp;
    int            chunksamps;
    FRAMETYPE      i_chunkstart;   // we need this for rtperf
-   Locked<FRAMETYPE>    endsamp;
+   //Locked<FRAMETYPE>    endsamp; //JRG
+   FRAMETYPE	endsamp;
    int            output_offset;
 
    int            sfile_on;        // a soundfile is open (for closing later)
