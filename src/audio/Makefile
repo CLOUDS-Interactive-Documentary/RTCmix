@@ -5,9 +5,6 @@ AUDIOLIB = librtaudio.a
 INCLUDES += -I../sndlib -I../rtcmix -I$(INCLUDEDIR)
 CFLAGS += -DCMIX_LEGACY
 
-# Add this to enable the TestAudioDevice class
-#CXXFLAGS += -DTEST_AUDIO_DEVICE
-
 OBJECTS =  AudioDevice.o AudioIODevice.o AudioDeviceImpl.o \
 		   ThreadedAudioDevice.o AudioOutputGroupDevice.o \
 		   DualOutputAudioDevice.o AudioFileDevice.o \
@@ -35,14 +32,6 @@ $(AUDIOLIB):	$(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(SOUND_DRIVER) -c $< -o $@
 
 depend:
-ifeq ($(ARCH),LINUX)
-	$(SHELL) -ec '$(CC) -MM $(CFLAGS) $(SOUND_DRIVER) *.c *.cpp' > depend
-endif
-ifeq ($(ARCH),SGI)
-# Note: -MM is a gcc extension. If no gcc, use -M.
-# Unfortunately, this doesn't work...   -JGG
-#	$(SHELL) -ec '$(CC) -M $(CFLAGS) $(SRCS) $(CPPSRCS)' > depend
-endif
 
 -include depend
 

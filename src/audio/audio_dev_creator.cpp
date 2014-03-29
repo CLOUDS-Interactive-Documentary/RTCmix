@@ -5,28 +5,11 @@
 // based upon the compile options, and uses that to determine which object
 // to build based on the passed-in descriptor.
 
+#include <stdio.h>
+
 #include <ugens.h>
 
-#ifdef LINUX
-#include "SinglePortOSSAudioDevice.h"
-#include "MultiPortOSSAudioDevice.h"
-#include "TestAudioDevice.h"
-#endif
-#ifdef ALSA
-#include "ALSAAudioDevice.h"
-#endif
-#ifdef NETAUDIO
-#include "NetAudioDevice.h"
-#endif
-#ifdef MACOSX
 #include "OSXAudioDevice.h"
-#endif
-#ifdef SGI
-#include "SGIAudioDevice.h"
-#endif
-#ifdef JACK
-#include "JackAudioDevice.h"
-#endif
 
 #include "AudioIODevice.h"
 
@@ -38,30 +21,6 @@ struct AudioDevEntry {
 };
 
 static const AudioDevEntry s_AudioDevEntries[] = {
-#ifdef NETAUDIO
-	{ &NetAudioDevice::recognize, &NetAudioDevice::create },
-#endif
-#ifdef JACK // before MACOSX, since OSXAudioDevice::recognize matches anything
-	{ &JackAudioDevice::recognize, &JackAudioDevice::create },
-#endif
-#ifdef MACOSX
-  #ifndef OF_ANDROID
-	{ &OSXAudioDevice::recognize, &OSXAudioDevice::create },
-  #endif
-#endif
-#ifdef ALSA
-	{ &ALSAAudioDevice::recognize, &ALSAAudioDevice::create },
-#endif
-#ifdef LINUX
-#ifdef TEST_AUDIO_DEVICE
-	{ &TestAudioDevice::recognize, &TestAudioDevice::create },
-#endif
-	{ &MultiPortOSSAudioDevice::recognize, &MultiPortOSSAudioDevice::create },
-	{ &SinglePortOSSAudioDevice::recognize, &SinglePortOSSAudioDevice::create },
-#endif
-#ifdef SGI
-	{ &SGIAudioDevice::recognize, &SGIAudioDevice::create },
-#endif
 	{ NULL, NULL }
 };
 

@@ -3,16 +3,17 @@
 #ifndef _OSX_AUDIO_DEVICE_H_
 #define _OSX_AUDIO_DEVICE_H_
 
-#include "AudioDeviceImpl.h"
+//#include "AudioDeviceImpl.h"
 
-class OSXAudioDevice : public AudioDeviceImpl {
+class OSXAudioDevice {
 public:
-	OSXAudioDevice(const char *desc=NULL);
+	OSXAudioDevice();
+	//OSXAudioDevice(const char *desc=NULL);
 	virtual ~OSXAudioDevice();
 	// Recognizer
 	static bool			recognize(const char *);
 	// Creator
-	static AudioDevice*	create(const char *, const char *, int);
+	// static AudioDevice*	create(const char *, const char *, int);
 	
 protected:
 	// AudioDeviceImpl reimplementation
@@ -34,9 +35,9 @@ private:
 	int			openInput();
 	int			openOutput();
 private:
-	struct	Impl;
-	friend struct Impl;
-	Impl	*_impl;
+	//struct	Impl;
+	//friend struct Impl;
+	//Impl	*_impl;
 };
 
 #endif	// _OSX_AUDIO_DEVICE_H_
