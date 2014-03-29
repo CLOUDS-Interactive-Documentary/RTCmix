@@ -222,9 +222,6 @@
     <ClCompile Include="..\genlib\resonz.c">
       <Filter>genlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\TaskManager.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\utils.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -429,9 +426,6 @@
     <ClCompile Include="..\src\rtcmix\rtsetparams.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\RTThread.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\rtwritesamps.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -461,6 +455,9 @@
     </ClCompile>
     <ClCompile Include="..\src\rtcmix\heap\heap.cpp">
       <Filter>src\rtcmix\heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\dirent.c">
+      <Filter>include</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -659,9 +656,6 @@
     <ClInclude Include="..\src\rtcmix\RTSemaphore.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\rtcmix\RTThread.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\rtcmix\sfheader.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
@@ -672,9 +666,6 @@
       <Filter>src\rtcmix</Filter>
     </ClInclude>
     <ClInclude Include="..\src\rtcmix\tableutils.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\rtcmix\TaskManager.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
     <ClInclude Include="..\src\rtcmix\ug_intro.h">
@@ -700,6 +691,9 @@
     </ClInclude>
     <ClInclude Include="..\src\rtcmix\heap\heap.h">
       <Filter>src\rtcmix\heap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\dirent.h">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

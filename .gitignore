@@ -1,5 +1,6 @@
 .DS_Store
 VS11/x64/
+VS11/Debug/
 
 *.a
 *.obj

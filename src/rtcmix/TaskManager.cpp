@@ -11,9 +11,9 @@
 
 #include "TaskManager.h"
 #include "RTSemaphore.h"
-#include "RTThread.h"
+//#include "RTThread.h"
 #include "rt_types.h"
-#include <pthread.h>
+//#include <pthread.h>
 #include <stdio.h>
 #include <assert.h>
 

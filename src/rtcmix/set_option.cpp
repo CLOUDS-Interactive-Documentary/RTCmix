@@ -20,6 +20,10 @@
 #include <ctype.h>
 #include <errno.h>
 #include <Option.h>
+#ifdef _MSC_VER
+  #define strcasecmp _stricmp 
+  #define strncasecmp _strnicmp 
+#endif
 
 enum ParamType {
 	AUDIO,

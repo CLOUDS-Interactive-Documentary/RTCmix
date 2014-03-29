@@ -8,7 +8,11 @@
 */
 
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <math.h>       /* for fabs */
 #include <assert.h>
 #include <RTcmix.h>

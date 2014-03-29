@@ -6,11 +6,14 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <iostream>
-#include <sys/socket.h>
+//#include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
-
+#endif
 #include "RTcmixMain.h"
 #include <AudioDevice.h>
 #include <Option.h>
@@ -367,7 +370,7 @@ RTcmixMain::parseArguments(int argc, char **argv, char **env)
 void
 RTcmixMain::run()
 {
-   pthread_t   sockitThread;
+   //pthread_t   sockitThread;
    int retcode;
    /* In rtInteractive mode, we set up RTcmix to listen for score data
       over a socket, and then parse this, schedule instruments, and play
@@ -397,10 +400,10 @@ RTcmixMain::run()
 #ifdef DBUG
       fprintf(stdout, "creating sockit() thread\n");
 #endif
-      retcode = pthread_create(&sockitThread, NULL, &RTcmixMain::sockit, (void *) this);
-      if (retcode != 0) {
-         fprintf(stderr, "sockit() thread create failed\n");
-      }
+      //retcode = pthread_create(&sockitThread, NULL, &RTcmixMain::sockit, (void *) this);
+      //if (retcode != 0) {
+      //   fprintf(stderr, "sockit() thread create failed\n");
+      //}
 
       /* Create scheduling thread. */
 #ifdef DBUG
@@ -415,10 +418,10 @@ RTcmixMain::run()
 #ifdef DBUG
       fprintf(stdout, "joining sockit() thread\n");
 #endif
-      retcode = pthread_join(sockitThread, NULL);
-      if (retcode != 0) {
-         fprintf(stderr, "sockit() thread join failed\n");
-      }
+      //retcode = pthread_join(sockitThread, NULL);
+      //if (retcode != 0) {
+      //   fprintf(stderr, "sockit() thread join failed\n");
+      //}
 
       /* Wait for audio thread. */
 #ifdef DBUG
@@ -525,6 +528,7 @@ RTcmixMain::set_sig_handlers()
 #endif
 }
 
+#ifndef _MSC_VER
 void *
 RTcmixMain::sockit(void *arg)
 {
@@ -709,6 +713,7 @@ RTcmixMain::sockit(void *arg)
     cout << "EXITING sockit() FUNCTION **********\n";
 #endif
 }
+#endif
 
 #ifdef MAXMSP
 // BGG -- called by flush_sched() in main.cpp (for the [flush] message)

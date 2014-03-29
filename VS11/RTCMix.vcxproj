@@ -84,6 +84,7 @@
     <ClCompile Include="..\genlib\tablei.c" />
     <ClCompile Include="..\genlib\tableset.c" />
     <ClCompile Include="..\genlib\wshape.c" />
+    <ClCompile Include="..\include\dirent.c" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp" />
     <ClCompile Include="..\src\rtcmix\addrtInst.cpp" />
@@ -144,7 +145,6 @@
     <ClCompile Include="..\src\rtcmix\rtsetinput.cpp" />
     <ClCompile Include="..\src\rtcmix\rtsetoutput.cpp" />
     <ClCompile Include="..\src\rtcmix\rtsetparams.cpp" />
-    <ClCompile Include="..\src\rtcmix\RTThread.cpp" />
     <ClCompile Include="..\src\rtcmix\rtwritesamps.cpp" />
     <ClCompile Include="..\src\rtcmix\rt_ug_intro.cpp" />
     <ClCompile Include="..\src\rtcmix\sampfunc.c" />
@@ -157,7 +157,6 @@
     <ClCompile Include="..\src\rtcmix\sound_sample_buf_read.cpp" />
     <ClCompile Include="..\src\rtcmix\table.cpp" />
     <ClCompile Include="..\src\rtcmix\tableutils.cpp" />
-    <ClCompile Include="..\src\rtcmix\TaskManager.cpp" />
     <ClCompile Include="..\src\rtcmix\tempo.c" />
     <ClCompile Include="..\src\rtcmix\ug_intro.c" />
     <ClCompile Include="..\src\rtcmix\utils.cpp" />
@@ -192,6 +191,7 @@
     <ClInclude Include="..\include\buzz.h" />
     <ClInclude Include="..\include\combs.h" />
     <ClInclude Include="..\include\delmacros.h" />
+    <ClInclude Include="..\include\dirent.h" />
     <ClInclude Include="..\include\hpluck.h" />
     <ClInclude Include="..\include\macros.h" />
     <ClInclude Include="..\include\Ougens.h" />
@@ -235,12 +235,10 @@
     <ClInclude Include="..\src\rtcmix\rtcmix_types.h" />
     <ClInclude Include="..\src\rtcmix\rtdefs.h" />
     <ClInclude Include="..\src\rtcmix\RTSemaphore.h" />
-    <ClInclude Include="..\src\rtcmix\RTThread.h" />
     <ClInclude Include="..\src\rtcmix\sfheader.h" />
     <ClInclude Include="..\src\rtcmix\sockdefs.h" />
     <ClInclude Include="..\src\rtcmix\spray.h" />
     <ClInclude Include="..\src\rtcmix\tableutils.h" />
-    <ClInclude Include="..\src\rtcmix\TaskManager.h" />
     <ClInclude Include="..\src\rtcmix\ug_intro.h" />
     <ClInclude Include="..\src\rtcmix\utils.h" />
     <ClInclude Include="..\src\rtcmix\version.h" />
