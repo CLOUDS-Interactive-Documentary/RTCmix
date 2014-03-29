@@ -4,14 +4,9 @@
 
 include makefile.conf
 
-# BGG
-#	DIRS = include genlib src insts utils apps docs snd
+# RLD
 BASE = insts/base
-ifeq ($(BUILDTYPE), STANDALONE)
-	DIRS = include genlib src insts utils
-else
-	DIRS = include genlib insts src
-endif
+DIRS = include genlib insts src
 
 all:	install_dirs
 	@echo "making all ..."
@@ -39,21 +34,6 @@ genlib::
 	@cd genlib; $(MAKE) $(MFLAGS) all
 	@echo "done."; echo ""
 
-utils::
-	@echo "making utils..."
-	@cd utils; $(MAKE) $(MFLAGS) all
-	@echo "done."; echo ""
-
-docs::
-	@echo "making docs ..."
-	@cd docs; $(MAKE) $(MFLAGS) all
-	@echo "done."; echo ""
-
-snd::
-	@echo "making snd ..."
-	@cd snd; $(MAKE) $(MFLAGS) all
-	@echo "done."; echo ""
-
 insts::
 	@echo "making insts ..."
 	@cd insts; $(MAKE) $(MFLAGS) all
@@ -62,23 +42,6 @@ insts::
 base::
 	@echo "making base insts ..."
 	@cd insts; $(MAKE) $(MFLAGS) base
-	@echo "done."; echo ""
-
-imbed::
-	@echo "making imbed apps ..."
-	@cd apps; $(MAKE) $(MFLAGS) imbed
-	@echo "done."; echo ""
-
-apps::
-	@echo "making apps ..."
-	@cd apps; $(MAKE) $(MFLAGS) all
-	@echo "done."; echo ""
-
-dsos:: insts
-
-standalone::
-	@echo "making standalone ..."
-	@cd insts; $(MAKE) $(MFLAGS) standalone
 	@echo "done."; echo ""
 
 #############################################################  make install  ###
@@ -90,21 +53,6 @@ install:	install_dirs
 	  ( cd $$DIR; $(MAKE) $(MFLAGS) install ); \
 	done
 	@echo "install done."; echo ""
-
-base_install:
-	@echo "beginning base_install..."
-	@cd $(BASE); $(MAKE) $(MFLAGS) install;
-	@echo "base_install done."; echo ""
-
-dso_install: 
-	@echo "beginning dso_install..."
-	cd insts; $(MAKE) $(MFLAGS) dso_install;
-	@echo "dso_install done."; echo ""
-
-standalone_install::
-	@echo "beginning standalone_install..."
-	@cd insts; $(MAKE) $(MFLAGS) standalone_install;
-	@echo "standalone_install done."; echo ""
 
 install_dirs::
 	@if test ! -d $(LIBDIR); then mkdir $(LIBDIR); fi;
@@ -119,16 +67,6 @@ uninstall::
 	  ( cd $$DIR; $(MAKE) $(MFLAGS) uninstall ); \
 	done
 	@echo "uninstall done."; echo ""
-
-dso_uninstall: 
-	@echo "beginning dso_uninstall..."
-	@cd insts; $(MAKE) $(MFLAGS) dso_uninstall; 
-	@echo "dso_uninstall done."; echo ""
-
-standalone_uninstall::
-	@echo "beginning standalone_uninstall..."
-	@cd insts; $(MAKE) $(MFLAGS) standalone_uninstall; 
-	@echo "standalone_uninstall done."; echo ""
 
 ###############################################################  make depend  ##
 
@@ -148,7 +86,6 @@ clean::
 	  ( cd $$DIR; echo "making clean in $$DIR..."; \
 	  $(MAKE) $(MFLAGS) clean ); \
 	done
-	( cd pkg/osx; echo "making clean in pkg/osx..." )
 
 cleanall::
 	@for DIR in $(DIRS); \
@@ -156,7 +93,6 @@ cleanall::
 	  ( cd $$DIR; echo "making cleanall in $$DIR..."; \
 	  $(MAKE) $(MFLAGS) cleanall ); \
 	done
-	( cd pkg/osx; echo "making clean in pkg/osx..." )
 
 # Make it clean for distribution or for moving to another system
 distclean: cleanall cleanac

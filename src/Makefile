@@ -2,10 +2,7 @@
 
 include ../makefile.conf
 
-DIRS = sndlib audio conf parser control rtcmix
-
-.PHONY: all progs dsos standalone install dso_install standalone_install \
-uninstall dso_uninstall standalone_uninstall clean cleanall
+DIRS = sndlib conf parser control rtcmix
 
 all: $(DIRS)
 	@for DIR in $(DIRS); \
@@ -24,20 +21,12 @@ install:
 	  $(MAKE) $(MFLAGS) install; ); \
 	done
 
-dso_install: all
-
-standalone_install: standalone
-
 uninstall:
 	@for DIR in $(DIRS); \
 	do \
 	  ( cd $$DIR; echo "making uninstall in $$DIR..."; \
 		$(MAKE) $(MFLAGS) uninstall ); \
 	done
-
-dso_uninstall:
-
-standalone_uninstall: do_package
 
 depend::
 	@for DIR in $(DIRS); \

@@ -1,16 +1,7 @@
 include ../../makefile.conf
 
-# BGGx
-#	DIRS = common midi mouse display datafile pfbus
-ifeq ($(BUILDTYPE), STANDALONE)
-	DIRS = common midi datafile pfbus
-else
-	DIRS = maxmsp pfbus
-endif
-
-ifeq ($(OSC_SUPPORT), TRUE)
-	DIRS += osc
-endif
+# RLD
+DIRS = maxmsp pfbus
 
 all: $(DIRS) $(OBJS)
 	@for DIR in $(DIRS); \
