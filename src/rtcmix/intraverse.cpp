@@ -9,7 +9,11 @@
 #include <iostream>
 #endif
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <assert.h>
 #include "heap/heap.h"
 #include "rtdefs.h"
@@ -55,21 +59,21 @@ int RTcmix::runMainLoop(void)
 	audioLoopStarted = 1;
 
 	// Wait for the ok to go ahead
-	::pthread_mutex_lock(&audio_config_lock);
+//	::pthread_mutex_lock(&audio_config_lock);
 	if (!audio_config) {
 #ifndef MAXMSP
 		if (Option::print())
 			cout << "runMainLoop():  waiting for audio_config . . .\n";
 #endif
 	}
-	::pthread_mutex_unlock(&audio_config_lock);
+//	::pthread_mutex_unlock(&audio_config_lock);
 
 	while (!audio_configured) {
-		::pthread_mutex_lock(&audio_config_lock);
+//		::pthread_mutex_lock(&audio_config_lock);
 		if (audio_config) {
 			audio_configured = YES;
 		}
-		::pthread_mutex_unlock(&audio_config_lock);
+//		::pthread_mutex_unlock(&audio_config_lock);
 		if (rtInteractive) {
 			if (run_status == RT_GOOD || run_status == RT_PANIC)
 				continue;
@@ -216,7 +220,7 @@ bool RTcmix::inTraverse(AudioDevice *device, void *arg)
         iBus = Iptr->getBusSlot();
 
 		// DJT Now we push things onto different queues
-		::pthread_mutex_lock(&bus_slot_lock);
+//		::pthread_mutex_lock(&bus_slot_lock);
 		IBusClass bus_class = iBus->Class();
 		switch (bus_class) {
 		case TO_AUX:
@@ -281,7 +285,7 @@ bool RTcmix::inTraverse(AudioDevice *device, void *arg)
 			rterror("intraverse", "unknown bus_class");
 			break;
 		}
-		::pthread_mutex_unlock(&bus_slot_lock);
+//		::pthread_mutex_unlock(&bus_slot_lock);
 	}
 	// End rtHeap popping and rtQueue insertion ----------------------------
 
@@ -301,22 +305,22 @@ bool RTcmix::inTraverse(AudioDevice *device, void *arg)
 		case TO_AUX:
 			bus_q_offset = 0;
 			bus_type = BUS_AUX_OUT;
-			::pthread_mutex_lock(&to_aux_lock);
+//			::pthread_mutex_lock(&to_aux_lock);
 			bus = ToAuxPlayList[play_bus++];
-			::pthread_mutex_unlock(&to_aux_lock);
+//			::pthread_mutex_unlock(&to_aux_lock);
 			break;
 		case AUX_TO_AUX:
 			bus_q_offset = MAXBUS;
-			::pthread_mutex_lock(&aux_to_aux_lock);
+//			::pthread_mutex_lock(&aux_to_aux_lock);
 			bus = AuxToAuxPlayList[play_bus++];
-			::pthread_mutex_unlock(&aux_to_aux_lock);
+//			::pthread_mutex_unlock(&aux_to_aux_lock);
 			bus_type = BUS_AUX_OUT;
 			break;
 		case TO_OUT:
 			bus_q_offset = MAXBUS*2;
-			::pthread_mutex_lock(&to_out_lock);
+//			::pthread_mutex_lock(&to_out_lock);
 			bus = ToOutPlayList[play_bus++];
-			::pthread_mutex_unlock(&to_out_lock);
+//			::pthread_mutex_unlock(&to_out_lock);
 			bus_type = BUS_OUT;
 			break;
 		default:

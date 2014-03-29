@@ -31,7 +31,7 @@ heap::~heap()
 
 FRAMETYPE heap::getTop()
 {
-  Lock topLock(getLockHandle());	// This will unlock when it goes out of scope
+  //Lock topLock(getLockHandle());	// This will unlock when it goes out of scope
   return top ? top->chunkStart : 0;
 }
 
@@ -42,7 +42,7 @@ void heap::insert(Instrument *newInst, FRAMETYPE cStart)
   Instrument *tempInst;
   unsigned long tempChunkStart;
 
-  Lock insertLock(getLockHandle());	// This will unlock when it goes out of scope
+  //Lock insertLock(getLockHandle());	// This will unlock when it goes out of scope
 
 //  cout << "insert(in):  " << cStart << '\n';
 
@@ -103,7 +103,7 @@ heap::deleteMin(FRAMETYPE maxChunkStart, FRAMETYPE *pChunkStart)
   unsigned long tempChunkStart;
   unsigned long retChunkStart;
 
-  Lock deleteLock(getLockHandle());	// This will unlock when it goes out of scope
+  //Lock deleteLock(getLockHandle());	// This will unlock when it goes out of scope
 
   sift = 1;
 
