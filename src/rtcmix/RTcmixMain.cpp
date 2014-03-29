@@ -604,21 +604,21 @@ RTcmixMain::sockit(void *arg)
       if (noParse) {
 		
 		// Wait for the ok to go ahead
-		pthread_mutex_lock(&audio_config_lock);
+//		pthread_mutex_lock(&audio_config_lock);
 		if (!audio_config) {
 #ifndef MAXMSP
 		  if (Option::print())
 			cout << "sockit():  waiting for audio_config . . . \n";
 #endif
 		}
-		pthread_mutex_unlock(&audio_config_lock);
+//		pthread_mutex_unlock(&audio_config_lock);
 		
 		while (!audio_configured) {
-		  pthread_mutex_lock(&audio_config_lock);
+//		  pthread_mutex_lock(&audio_config_lock);
 		  if (audio_config) {
 			audio_configured = YES;
 		  }
-		  pthread_mutex_unlock(&audio_config_lock);
+//		  pthread_mutex_unlock(&audio_config_lock);
 
 		  sptr = (char *)sinfo;
 		  amt = read(ns, (void *)sptr, sizeof(struct sockdata));
