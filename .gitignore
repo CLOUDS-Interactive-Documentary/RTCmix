@@ -3,3 +3,5 @@
 *.a
 
 *.o
+
+/src/audio/.DS_Store
