@@ -9,9 +9,9 @@ struct delayq
 #ifdef __cplusplus
 
 #include <RefCounted.h>
-#include <Lockable.h>
+//#include <Lockable.h>
 
-class DelayQueue : public delayq, public RefCounted, public Lockable
+class DelayQueue : public delayq, public RefCounted
 {
 };
 

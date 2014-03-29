@@ -9,9 +9,9 @@ struct strumq
 #ifdef __cplusplus
 
 #include <RefCounted.h>
-#include <Lockable.h>
+//#include <Lockable.h>
 
-class StrumQueue : public strumq, public RefCounted, public Lockable
+class StrumQueue : public strumq, public RefCounted
 {
 } ;
 
