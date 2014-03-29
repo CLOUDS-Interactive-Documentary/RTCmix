@@ -301,7 +301,7 @@ double m_getpch(float p[], int n_args, double pp[])
 	if((pchfd = open(input,0)) < 0)
 		die("getpch", "Can't open pitch analysis file");
 
-	nbframe = 2*FLOAT; 
+	nbframe = 2*RT_FLOAT_SIZE; 
 	frameno = (int)p[1];
 
 	skipbytes = frameno * nbframe;
@@ -331,7 +331,7 @@ double m_getamp(float p[], int n_args, double pp[])
 	if((pchfd = open(input,0)) < 0)
 		die("getamp", "Can't open pitch analysis file");
 
-	nbframe = 2*FLOAT; 
+	nbframe = 2*RT_FLOAT_SIZE; 
 	frameno = (int)p[1];
 
 	skipbytes = frameno * nbframe;

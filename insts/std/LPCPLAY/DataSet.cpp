@@ -59,8 +59,8 @@ DataSet::open(const char *fileName, int npoleGuess, float sampRate)
 	_npolem1=_nPoles-1;
 	_framsize=_nPoles+4;
 	_recsize=_fprec*_framsize;
-	_bprec=_recsize*FLOAT;
-	_bpframe=_framsize*FLOAT;
+	_bprec=_recsize*RT_FLOAT_SIZE;
+	_bpframe=_framsize*RT_FLOAT_SIZE;
 
 	struct stat st;
 	/* store and return number of frames in datafile */
