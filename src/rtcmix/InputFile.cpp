@@ -460,7 +460,7 @@ off_t InputFile::readSamps(off_t cur_offset,
 		_readBuffer = sConversionBuffers[RTThread::GetIndexForThread()];
 #endif
 		{
-			AutoLock fileLock(this);
+			//AutoLock fileLock(this);
 			if (lseek(_fd, cur_offset, SEEK_SET) == -1) {
 #ifndef MAXMSP
 				perror("RTcmix::readFromInputFile (lseek)");
