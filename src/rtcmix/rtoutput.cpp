@@ -10,6 +10,8 @@
 #include <sys/stat.h>
 #ifdef _MSC_VER
 #include <io.h>
+#define strcasecmp _stricmp 
+#define strncasecmp _strnicmp 
 #else
 #include <unistd.h>
 #endif

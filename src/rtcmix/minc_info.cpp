@@ -6,7 +6,9 @@
 #include "rtdefs.h"
 #include "InputFile.h"
 #include <stdio.h>
+#ifndef _MSC_VER
 #include <sys/file.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <PFBusData.h>

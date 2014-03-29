@@ -1,9 +1,15 @@
 #include "globals.h"
 #include <stdio.h>
-#include <sys/file.h>
 #include <sys/types.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#include <times.h>
+#else
+#include <sys/file.h>
 #include <sys/time.h>
 #include <unistd.h>
+#endif
 #include <math.h>
 #include <ugens.h>
 #include <spray.h>

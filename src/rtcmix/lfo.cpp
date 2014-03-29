@@ -140,7 +140,11 @@ makeLFO(const Arg args[], const int nargs)
 
 // -------------------------------------------------------------- makerandom ---
 #include <Random.h>
+#ifdef _MSC_VER
+#include <time.h>
+#else
 #include <sys/time.h>
+#endif
 
 static Handle
 _makerandom_usage()

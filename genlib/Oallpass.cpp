@@ -51,7 +51,7 @@ void Oallpass::clear()
 void Oallpass::setReverbTime(float reverbTime)
 {
 	assert(reverbTime > 0.0);
-	_gain = pow(0.001, (_delsamps / _sr) / reverbTime);
+	_gain = pow(0.001f, (_delsamps / _sr) / reverbTime);
 }
 
 float Oallpass::next(float input)

@@ -3,7 +3,11 @@
    the license to this software and for a DISCLAIMER OF ALL WARRANTIES.
 */
 #include <Orand.h>
+#ifdef _MSC_VER
+#include <time.h>
+#else
 #include <sys/time.h>
+#endif
 
 Orand::Orand() : rand_x(1)
 {

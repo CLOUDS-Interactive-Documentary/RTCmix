@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #ifdef _MSC_VER
+#define PATH_MAX FILENAME_MAX 
 #include <io.h>
 #else
 #include <unistd.h>

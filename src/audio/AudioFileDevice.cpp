@@ -11,6 +11,9 @@
 #include <assert.h>
 #include <errno.h>
 #include <string.h>
+#ifdef _MSC_VER
+#include <io.h>
+#endif
 #if defined(linux) || defined(MACOSX)
 #include <unistd.h>
 #endif

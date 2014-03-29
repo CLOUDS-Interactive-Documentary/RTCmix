@@ -7,7 +7,11 @@
 
 #include <RTcmix.h>
 #include <stdio.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <assert.h>
 #include "prototypes.h"
 #include "buffers.h"

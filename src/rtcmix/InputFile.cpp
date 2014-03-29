@@ -10,7 +10,11 @@
 #include <sndlib.h>
 #include <assert.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <string.h>
 #include <fcntl.h>
 #include <sndlibsupport.h>
