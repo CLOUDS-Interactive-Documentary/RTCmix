@@ -42,9 +42,15 @@ cleanall:
 	done
 
 depend:
-	-$(SHELL) -ec '$(CC) -M $(CFLAGS) $(PERL_CCFLAGS) $(PYTHON_CCFLAGS) $(SRCS)' > depend
+ifeq ($(ARCH),SGI)
+# Note: -MM is a gcc extension. If no gcc, use -M.
+# # Unfortunately, this doesn't work...   -JGG
+# #   $(SHELL) -ec '$(CC) -M $(CFLAGS) $(SRCS)' > depend
+else
+	-$(SHELL) -ec '$(CC) -M $(CFLAGS) $(SRCS)' > depend
 	@for DIR in $(DIRS); \
 	do \
 	  ( cd $$DIR; $(MAKE) $(MFLAGS) depend; ) \
 	done
+endif
 

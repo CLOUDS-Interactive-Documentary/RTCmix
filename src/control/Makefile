@@ -1,6 +1,7 @@
 include ../../makefile.conf
 
 # RLD
+#	DIRS = common midi mouse display datafile pfbus
 DIRS = maxmsp pfbus
 
 all: $(DIRS) $(OBJS)
