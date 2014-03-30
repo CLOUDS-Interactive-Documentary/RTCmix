@@ -740,55 +740,55 @@ typedef void (*mm_loadFun)();
 int 
 RTcmixMain::doload(char *dsoPath)
 {
-    int profileLoaded;
-    mm_loadFun mm_loadrtprof = NULL;
-
-	// unload the dso if already present (this method checks for that)
-	theDSO.unload();
-
-    if (theDSO.load(dsoPath) != 0) {
-		rtcmix_warn("load", "Unable to dynamically load '%s': %s",
-			 dsoPath, theDSO.error());
-		return 0;
-    }
-
-    profileLoaded = 0;
-
-    /* if present, load & call the shared library's rtprofile function to 
-     * load its symbols.  Note that we access the function via its 
-     * unmangled symbol name due to its extern "C" decl in rt.h.
-     */
-
-	// BGG mm -- loading into rtcmix~ uses an auxiliary function in the
-	// instrument definition called "mm_load_rtprofile()", which then
-	// calls the rtprofile() [renamed mm_rtprofile()].
-	if (theDSO.loadFunction(&mm_loadrtprof, "mm_load_rtprofile") == 0) {
-      profileLoaded = 1; 
-      (*mm_loadrtprof)(); 
-#ifdef DBUG
-      printf("Loaded RT profile\n"); 
-#endif
-     } 
-
-    if (!profileLoaded) {
-		rtcmix_warn("load", "Unable to find a profile routine in DSO '%s'", dsoPath);
-		theDSO.unload();
-		return 0;
-    }
-
-#ifndef MAXMSP
-// BGG -- this totally cause the maxmsp compile to stop
-	rtcmix_advise("loader", "Loaded %s functions from shared
-		library:\n\t'%s'.\n", (profileLoaded == 3) ? "standard and RT" :
-						   (profileLoaded == 2) ? "RT" : "standard", dsoPath);
-#endif
-
+//    int profileLoaded;
+//    mm_loadFun mm_loadrtprof = NULL;
+//
+//	// unload the dso if already present (this method checks for that)
+//	theDSO.unload();
+//
+//    if (theDSO.load(dsoPath) != 0) {
+//		rtcmix_warn("load", "Unable to dynamically load '%s': %s",
+//			 dsoPath, theDSO.error());
+//		return 0;
+//    }
+//
+//    profileLoaded = 0;
+//
+//    /* if present, load & call the shared library's rtprofile function to 
+//     * load its symbols.  Note that we access the function via its 
+//     * unmangled symbol name due to its extern "C" decl in rt.h.
+//     */
+//
+//	// BGG mm -- loading into rtcmix~ uses an auxiliary function in the
+//	// instrument definition called "mm_load_rtprofile()", which then
+//	// calls the rtprofile() [renamed mm_rtprofile()].
+//	if (theDSO.loadFunction(&mm_loadrtprof, "mm_load_rtprofile") == 0) {
+//      profileLoaded = 1; 
+//      (*mm_loadrtprof)(); 
+//#ifdef DBUG
+//      printf("Loaded RT profile\n"); 
+//#endif
+//     } 
+//
+//    if (!profileLoaded) {
+//		rtcmix_warn("load", "Unable to find a profile routine in DSO '%s'", dsoPath);
+//		theDSO.unload();
+//		return 0;
+//    }
+//
+//#ifndef MAXMSP
+//// BGG -- this totally cause the maxmsp compile to stop
+//	rtcmix_advise("loader", "Loaded %s functions from shared
+//		library:\n\t'%s'.\n", (profileLoaded == 3) ? "standard and RT" :
+//						   (profileLoaded == 2) ? "RT" : "standard", dsoPath);
+//#endif
+//
 	return 1;
 }
 
 void
 RTcmixMain::unload()
 {
-	theDSO.unload();
+//	theDSO.unload();
 }
 #endif // MAXMSP

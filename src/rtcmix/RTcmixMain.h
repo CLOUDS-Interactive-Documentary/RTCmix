@@ -2,7 +2,7 @@
 #define _RTCMIXMAIN_H_
 
 #include <RTcmix.h>
-#include "DynamicLib.h"
+//#include "DynamicLib.h"
 #ifdef _MSC_VER
 	#define RTCMIX_EXPORT __declspec(dllexport)
 #endif
@@ -14,7 +14,7 @@ public:
 	// BGG -- for flushing Queue/Heap frpm flush_sched() (main.cpp)
 	void resetQueueHeap();
 	// BGG -- experimental dynloading of RTcmix insts in max/msp
-	DynamicLib theDSO;
+	//DynamicLib theDSO;
 	int doload(char *dsoPath);
 	void unload();
 #else

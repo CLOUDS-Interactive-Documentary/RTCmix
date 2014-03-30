@@ -120,7 +120,7 @@ const char *Config::getLastErrorText()
 }
 
 extern int confparse(void *);
-#ifdef OF_ANDROID
+#if defined(OF_ANDROID) || defined(OPENFRAMEWORKS)
 	FILE *confin;
 	int confdebug;
 #else
@@ -132,7 +132,7 @@ ConfigErrorCode Config::parseStream(FILE *stream)
 {
    confin = stream;
    confdebug = _debug ? 1 : 0;
-#ifdef OF_ANDROID
+#if defined(OF_ANDROID) || defined(OPENFRAMEWORKS)
 	int status = 0;
 #else
    int status = confparse(this);
