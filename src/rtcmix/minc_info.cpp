@@ -160,11 +160,20 @@ int findpeakrmsdc(const char *funcname, const char *fname,
 	if (chan != ALL_CHANS && chan >= nchans)
 		return die(funcname, "You specified channel %d for a %d-channel file.",
 		           chan, nchans);
+#ifdef _MSC_VER
+	float* peak = new float[nchans];
+	long* peakloc = new long[nchans];
+	double* ampavg = new double[nchans];
+	double* dcavg = new double[nchans];
+	double* rms = new double[nchans];
+#else
 	float peak[nchans];
 	long peakloc[nchans];
 	double ampavg[nchans];
 	double dcavg[nchans];
 	double rms[nchans];
+
+#endif
    int result = sndlib_findpeak(fd, -1, dataloc, -1, format, nchans,
                     startframe, nframes, peak, peakloc, ampavg, dcavg, rms);
    sndlib_close(fd, 0, 0, 0, 0);
@@ -192,6 +201,13 @@ int findpeakrmsdc(const char *funcname, const char *fname,
 		*therms = rms[chan];
 		*thedc = dcavg[chan];
 	}
+	#ifdef _MSC_VER
+	delete[] peak;
+	delete[] peakloc;
+	delete[] ampavg;
+	delete[] dcavg;
+	delete[] rms;
+	#endif
 	return 0;
 }
 

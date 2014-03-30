@@ -9,6 +9,10 @@
 #include "tableutils.h"
 #include <ugens.h>		// for warn, die
 
+#ifdef _MSC_VER
+#include <times.h>
+#endif
+
 // Functions for creating LFO PFields.    -John Gibson, 11/20/04
 
 extern int resetval;		// declared in src/rtcmix/minc_functions.c

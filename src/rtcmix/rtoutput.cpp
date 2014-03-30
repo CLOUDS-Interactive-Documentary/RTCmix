@@ -6,8 +6,8 @@
 #include <ugens.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include <sys/stat.h>
+#include <string.h>
 #ifdef _MSC_VER
 #include <io.h>
 #define strcasecmp _stricmp 
@@ -330,11 +330,12 @@ RTcmix::rtoutput(float p[], int n_args, double pp[])
       }
       else {
          /* make sure it's a regular file */
-         if (!S_ISREG(statbuf.st_mode)) {
-            rterror("rtoutput", "\"%s\" isn't a regular file; won't clobber it",
-                                                                 rtoutsfname);
-            return -1;
-         }
+		  //JRG commented out!
+         //if (!S_ISREG(statbuf.st_mode)) {
+         //   rterror("rtoutput", "\"%s\" isn't a regular file; won't clobber it",
+         //                                                        rtoutsfname);
+         //   return -1;
+         //}
       }
    }
 

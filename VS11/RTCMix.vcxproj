@@ -89,6 +89,7 @@
     <ClCompile Include="..\src\audio\audio_devices.cpp" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
+    <ClCompile Include="..\src\conf\Config.cpp" />
     <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp" />
     <ClCompile Include="..\src\rtcmix\addrtInst.cpp" />
     <ClCompile Include="..\src\rtcmix\buffers.cpp" />
@@ -207,6 +208,7 @@
     <ClInclude Include="..\src\audio\audio_devices.h" />
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
+    <ClInclude Include="..\src\conf\Config.h" />
     <ClInclude Include="..\src\include\maxdispargs.h" />
     <ClInclude Include="..\src\rtcmix\atomic_stack.h" />
     <ClInclude Include="..\src\rtcmix\buffers.h" />
@@ -324,7 +326,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -348,11 +350,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;MAXMSP=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

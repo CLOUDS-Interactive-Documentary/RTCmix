@@ -5,6 +5,7 @@
 #include <Orand.h>
 #ifdef _MSC_VER
 #include <time.h>
+#include <times.h>
 #else
 #include <sys/time.h>
 #endif

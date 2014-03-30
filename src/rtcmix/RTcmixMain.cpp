@@ -148,7 +148,7 @@ char *RTcmixMain::makeDSOPath(const char *progPath)
 
          // use directory only if it exists
          struct stat statbuf;
-         if (stat(dsoPath, &statbuf) == 0 && S_ISDIR(statbuf.st_mode))
+         if (stat(dsoPath, &statbuf) == 0 /*&& S_ISDIR(statbuf.st_mode)*/)
             return dsoPath;
       }
    }

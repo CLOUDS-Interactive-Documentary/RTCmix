@@ -93,11 +93,13 @@ open_sound_file(
       rterror(funcname, "\"%s\": %s", sfname, strerror(errno));
       return -1;
    }
+#ifndef _MSC_VER
+   //JRG: Removed these posix checks on windows
    if (!S_ISREG(sfst.st_mode) && !S_ISLNK(sfst.st_mode)) {
       rterror(funcname, "\"%s\" is not a regular file or a link.\n", sfname);
       return -1;
    }
-
+#endif
    // Open the file and read its header.
    int fd = sndlib_open_read(sfname);
    if (fd == -1) {

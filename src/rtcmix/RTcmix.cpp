@@ -189,8 +189,11 @@ RTcmix::init_globals(bool fromMain, const char *defaultDSOPath)
       ToOutPlayList[i] = -1;    /* The playback order for AUX buses */
       ToAuxPlayList[i] =-1;     /* The playback order for AUX buses */
    }
-
+#ifdef _MSC_VER
+   max_input_fds = -1;
+#else
 	max_input_fds = sysconf(_SC_OPEN_MAX);
+#endif
 	if (max_input_fds == -1)	// call failed
 		max_input_fds = 128;		// what we used to hardcode
 	else
