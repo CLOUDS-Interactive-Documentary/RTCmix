@@ -264,9 +264,6 @@
     <ClCompile Include="..\src\rtcmix\io.c">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\load_utils.c">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\m_system.c">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -352,9 +349,6 @@
       <Filter>src\rtcmix</Filter>
     </ClCompile>
     <ClCompile Include="..\src\rtcmix\lfo.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\rtcmix\loader.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
     <ClCompile Include="..\src\rtcmix\minc_functions.cpp">
@@ -591,6 +585,18 @@
     <ClCompile Include="..\src\rtcmix\gen\modgens.c">
       <Filter>src\rtcmix\gen</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\rtcmix\heap\queue.cpp">
+      <Filter>src\rtcmix\heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\heap\rtQueue.cpp">
+      <Filter>src\rtcmix\heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\AudioDeviceImpl.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\AudioIODevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -710,9 +716,6 @@
     <ClInclude Include="..\src\rtcmix\dbug.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\rtcmix\DynamicLib.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\rtcmix\Functor.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
@@ -723,9 +726,6 @@
       <Filter>src\rtcmix</Filter>
     </ClInclude>
     <ClInclude Include="..\src\rtcmix\Instrument.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\rtcmix\load_utils.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
     <ClInclude Include="..\src\rtcmix\mixerr.h">
@@ -856,6 +856,12 @@
     </ClInclude>
     <ClInclude Include="..\src\parser\minc\y.tab.h">
       <Filter>src\parser\minc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\AudioDeviceImpl.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\AudioIODevice.h">
+      <Filter>src\audio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -38,7 +38,7 @@ const char *get_dso_error()
 	return dlerror();
 }
 
-#elif !defined(_MSC_VER)
+#elif !defined(WIN32)
 
 /* As of Mac OS X 10.1, the standard dlopen API is not supported officially
    (though there is a compatibility library floating around that works, from

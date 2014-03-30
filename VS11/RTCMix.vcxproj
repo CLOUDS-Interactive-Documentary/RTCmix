@@ -86,7 +86,9 @@
     <ClCompile Include="..\genlib\wshape.c" />
     <ClCompile Include="..\include\dirent.c" />
     <ClCompile Include="..\insts\base\WAVETABLE\WAVETABLE.cpp" />
+    <ClCompile Include="..\src\audio\AudioDeviceImpl.cpp" />
     <ClCompile Include="..\src\audio\AudioFileDevice.cpp" />
+    <ClCompile Include="..\src\audio\AudioIODevice.cpp" />
     <ClCompile Include="..\src\audio\audio_devices.cpp" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
@@ -137,14 +139,14 @@
     <ClCompile Include="..\src\rtcmix\gen\modgens.c" />
     <ClCompile Include="..\src\rtcmix\getsample.c" />
     <ClCompile Include="..\src\rtcmix\heap\heap.cpp" />
+    <ClCompile Include="..\src\rtcmix\heap\queue.cpp" />
+    <ClCompile Include="..\src\rtcmix\heap\rtQueue.cpp" />
     <ClCompile Include="..\src\rtcmix\infile.c" />
     <ClCompile Include="..\src\rtcmix\InputFile.cpp" />
     <ClCompile Include="..\src\rtcmix\Instrument.cpp" />
     <ClCompile Include="..\src\rtcmix\intraverse.cpp" />
     <ClCompile Include="..\src\rtcmix\io.c" />
     <ClCompile Include="..\src\rtcmix\lfo.cpp" />
-    <ClCompile Include="..\src\rtcmix\loader.cpp" />
-    <ClCompile Include="..\src\rtcmix\load_utils.c" />
     <ClCompile Include="..\src\rtcmix\main.cpp" />
     <ClCompile Include="..\src\rtcmix\merror.c" />
     <ClCompile Include="..\src\rtcmix\message.c" />
@@ -238,7 +240,9 @@
     <ClInclude Include="..\include\times.h" />
     <ClInclude Include="..\include\ugens.h" />
     <ClInclude Include="..\insts\base\WAVETABLE\WAVETABLE.h" />
+    <ClInclude Include="..\src\audio\AudioDeviceImpl.h" />
     <ClInclude Include="..\src\audio\AudioFileDevice.h" />
+    <ClInclude Include="..\src\audio\AudioIODevice.h" />
     <ClInclude Include="..\src\audio\audio_devices.h" />
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
@@ -255,13 +259,11 @@
     <ClInclude Include="..\src\rtcmix\byte_routines.h" />
     <ClInclude Include="..\src\rtcmix\DataFile.h" />
     <ClInclude Include="..\src\rtcmix\dbug.h" />
-    <ClInclude Include="..\src\rtcmix\DynamicLib.h" />
     <ClInclude Include="..\src\rtcmix\Functor.h" />
     <ClInclude Include="..\src\rtcmix\globals.h" />
     <ClInclude Include="..\src\rtcmix\heap\heap.h" />
     <ClInclude Include="..\src\rtcmix\InputFile.h" />
     <ClInclude Include="..\src\rtcmix\Instrument.h" />
-    <ClInclude Include="..\src\rtcmix\load_utils.h" />
     <ClInclude Include="..\src\rtcmix\mixerr.h" />
     <ClInclude Include="..\src\rtcmix\MMPrint.h" />
     <ClInclude Include="..\src\rtcmix\notetags.h" />
@@ -360,7 +362,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MAXMSP=1;SHAREDLIBDIR=".";OPENFRAMEWORKS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MAXMSP=1;SHAREDLIBDIR=".";OPENFRAMEWORKS=1;CMIX_LEGACY=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
