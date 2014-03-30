@@ -3,19 +3,13 @@
 #ifndef _TIMES_H
 #define _TIMES_H
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #include <sys/timeb.h>
 #include <sys/types.h>
 #include <winsock2.h>
 
 #define __need_clock_t
 #include <time.h>
-
-//struct timezone 
-//{
-//  int  tz_minuteswest; /* minutes W of Greenwich */
-//  int  tz_dsttime;     /* type of dst correction */
-//};
 
 // from linux's sys/times.h
 
@@ -42,4 +36,5 @@ clock_t times (struct tms *__buffer);
 typedef long long suseconds_t ;
 
 #endif
+
 #endif

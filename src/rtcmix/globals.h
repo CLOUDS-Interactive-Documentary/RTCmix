@@ -18,6 +18,6 @@
 
 // contains file descriptors for data files opened with infile
 // and used by gen2 and gen3
-FILE *	infile_desc[MAX_INFILE_DESC + 1];
+static FILE *	infile_desc[MAX_INFILE_DESC + 1];
 
 #endif /* _GLOBALS_H_ */

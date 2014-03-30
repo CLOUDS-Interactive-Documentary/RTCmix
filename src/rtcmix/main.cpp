@@ -202,15 +202,15 @@ int maxmsp_rtsetparams(float sr, int nchans, int vecsize, float *mm_inbuf, float
 	return(status);
 }
 
-
 // these are set from inlets on the rtcmix~ object, using PFields to
 // control the Instruments
 // rtcmix~ is set to constrain up to a max of 19 inlets for PFields
-float inletvals[20];
-
+//float inletvals[20];
+//
+//
 void pfield_set(int inlet, float pval)
 {
-	inletvals[inlet-1] = pval;
+//	inletvals[inlet-1] = pval;
 }
 
 

@@ -387,7 +387,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\include;..\src\rtcmix\gen;..\src\control\pfbus;..\src\control\maxmsp;..\src\parser\minc;..\src\parser;..\src\sndlib;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\src\sndlib;..\include;..\src\parser;..\src\parser\minc;..\src\conf;..\src\rtcmix;..\src\rtcmix\heap;..\src\rtcmix\gen;..\src\audio;..\src\include;..\src\control\pfbus;..\src\control\maxmsp;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -415,7 +415,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\include;..\src\rtcmix\gen;..\src\control\pfbus;..\src\control\maxmsp;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\src\sndlib;..\include;..\src\parser;..\src\parser\minc;..\src\conf;..\src\rtcmix;..\src\rtcmix\heap;..\src\rtcmix\gen;..\src\audio;..\src\include;..\src\control\pfbus;..\src\control\maxmsp;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

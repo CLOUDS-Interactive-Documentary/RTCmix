@@ -11,7 +11,8 @@
 
 // BGG -- this is set by pfield_set() in main.cpp
 //		the index is the inlet, the value is the value
-extern float inletvals[];
+//extern float inletvals[];
+float inletvals[20];
 
 RTInletPField::RTInletPField(
 			const int			n_inlet,

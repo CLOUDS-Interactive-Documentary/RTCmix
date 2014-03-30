@@ -49,9 +49,10 @@
 #include "globals.h"
 
 // This is declared (still) in globals.h for use in gen routines.
-//#ifndef WIN32
-extern FILE *	infile_desc[MAX_INFILE_DESC + 1];
-//#endif
+#ifndef _INFILE_EXTERN
+#define _INFILE_EXTERN 1
+extern FILE* infile_desc[];
+#endif
 
 extern "C" {
 #ifdef SGI

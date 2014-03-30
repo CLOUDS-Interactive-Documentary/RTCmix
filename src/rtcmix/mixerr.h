@@ -1,6 +1,7 @@
 /*
  *	mixerr.h: for MIX11 error codes
  */
+#pragma once
 
 #define	MX_NOERR	0
 #define MX_FEXIST	1
@@ -10,9 +11,6 @@
 
 #define	MX_NERR		5	/*  Number of standard error codes	*/
 
-#ifdef WIN32
-int mixerr;
-#else
-extern	int mixerr;
-#endif
+static int mixerr;
+//int mixerr;
 extern	char *mix_errlist[];
