@@ -330,45 +330,45 @@ typedef int (*RegisterFunction)();
 int
 RTcmix::registerDSOs(const char *pathList)
 {
-	const char *list = pathList;
-	while (list != NULL) {
-		char path[1024];
-		long itemLen;
-		const char *nextItem = strchr(list, ':');
-		if (nextItem != NULL) {
-			itemLen = nextItem - list;
-			++nextItem;		// skip semicolon
-		}
-		else {
-			itemLen = strlen(list);
-		}
-		strncpy(path, list, itemLen);
-		path[itemLen] = '\0';
-		
-		DIR *dsoDir = opendir(path);
-		if (dsoDir != NULL) {
-			struct dirent *entry;
-			while ((entry = readdir(dsoDir)) != NULL) {
-				if (strncmp(entry->d_name, "lib", 3) == 0) {
-					char fullPath[1024];
-					sprintf(fullPath, "%s/%s", path, entry->d_name);
-					DynamicLib dso;
-					if (dso.load(fullPath) == 0) {
-						RegisterFunction registerMe = NULL;
-//						RTPrintf("opened DSO '%s'\n", fullPath);
-						if (dso.loadFunction(&registerMe, "registerSelf") == 0)
-						{
-//							RTPrintf("\tcalling register function.\n");
-							(*registerMe)();
-						}
-						dso.unload();
-					}
-				}
-			}
-			closedir(dsoDir);
-		}
-		list = nextItem;
-	}
+//	const char *list = pathList;
+//	while (list != NULL) {
+//		char path[1024];
+//		long itemLen;
+//		const char *nextItem = strchr(list, ':');
+//		if (nextItem != NULL) {
+//			itemLen = nextItem - list;
+//			++nextItem;		// skip semicolon
+//		}
+//		else {
+//			itemLen = strlen(list);
+//		}
+//		strncpy(path, list, itemLen);
+//		path[itemLen] = '\0';
+//		
+//		DIR *dsoDir = opendir(path);
+//		if (dsoDir != NULL) {
+//			struct dirent *entry;
+//			while ((entry = readdir(dsoDir)) != NULL) {
+//				if (strncmp(entry->d_name, "lib", 3) == 0) {
+//					char fullPath[1024];
+//					sprintf(fullPath, "%s/%s", path, entry->d_name);
+//					DynamicLib dso;
+//					if (dso.load(fullPath) == 0) {
+//						RegisterFunction registerMe = NULL;
+////						RTPrintf("opened DSO '%s'\n", fullPath);
+//						if (dso.loadFunction(&registerMe, "registerSelf") == 0)
+//						{
+////							RTPrintf("\tcalling register function.\n");
+//							(*registerMe)();
+//						}
+//						dso.unload();
+//					}
+//				}
+//			}
+//			closedir(dsoDir);
+//		}
+//		list = nextItem;
+//	}
 	return 0;
 }
 

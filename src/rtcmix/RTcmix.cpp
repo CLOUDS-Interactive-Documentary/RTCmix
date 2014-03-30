@@ -203,13 +203,13 @@ RTcmix::init_globals(bool fromMain, const char *defaultDSOPath)
 
    init_buf_ptrs();
 
-   if (Option::autoLoad()) {
-      const char *dsoPath = Option::dsoPath();
-      if (strlen(dsoPath) == 0)
-         registerDSOs(SHAREDLIBDIR);
-      else
-         registerDSOs(dsoPath);
-   }
+   //if (Option::autoLoad()) {
+   //   const char *dsoPath = Option::dsoPath();
+   //   if (strlen(dsoPath) == 0)
+   //      registerDSOs(SHAREDLIBDIR);
+   //   else
+   //      registerDSOs(dsoPath);
+   //}
 }
 
 void
