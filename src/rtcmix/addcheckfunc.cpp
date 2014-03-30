@@ -317,8 +317,8 @@ RTcmix::registerFunction(const char *funcName, const char *dsoPath)
 	}
 }
 
-#include <dirent.h>
-#include "DynamicLib.h"
+//#include <dirent.h>
+//#include "DynamicLib.h"
 
 /* ------------------------------------------------------ registerDSOs -- */
 // This is called at initialization time to scan a supplied semicolon-separated

@@ -2021,9 +2021,9 @@ dumptable(const Arg args[], const int nargs)
 
 #define DEFAULT_PLOTCMD "with lines"
 
-//double
-//plottable(const Arg args[], const int nargs)
-//{
+double
+plottable(const Arg args[], const int nargs)
+{
 //#ifdef MACOSX
 //	static int plot_count = 1;
 //#endif
@@ -2102,7 +2102,7 @@ dumptable(const Arg args[], const int nargs)
 //#else
 //	cmd[255] = 0;
 //	system(cmd);
-//
-//	return 0.0;
-//}
+
+	return 0.0;
+}
 
