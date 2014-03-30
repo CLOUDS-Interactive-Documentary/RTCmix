@@ -504,9 +504,6 @@
     <ClCompile Include="..\src\parser\minc\handle.c">
       <Filter>src\parser\minc</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\parser\minc\lex.yy.c">
-      <Filter>src\parser\minc</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\parser\minc\sym.c">
       <Filter>src\parser\minc</Filter>
     </ClCompile>
@@ -595,6 +592,15 @@
       <Filter>src\audio</Filter>
     </ClCompile>
     <ClCompile Include="..\src\audio\AudioIODevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\psnprintf.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\lex.yy.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\AudioDevice.cpp">
       <Filter>src\audio</Filter>
     </ClCompile>
   </ItemGroup>
@@ -861,6 +867,12 @@
       <Filter>src\audio</Filter>
     </ClInclude>
     <ClInclude Include="..\src\audio\AudioIODevice.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\psnprintf.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\AudioDevice.h">
       <Filter>src\audio</Filter>
     </ClInclude>
   </ItemGroup>

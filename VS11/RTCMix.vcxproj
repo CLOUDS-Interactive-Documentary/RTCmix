@@ -85,7 +85,9 @@
     <ClCompile Include="..\genlib\tableset.c" />
     <ClCompile Include="..\genlib\wshape.c" />
     <ClCompile Include="..\include\dirent.c" />
+    <ClCompile Include="..\include\psnprintf.c" />
     <ClCompile Include="..\insts\base\WAVETABLE\WAVETABLE.cpp" />
+    <ClCompile Include="..\src\audio\AudioDevice.cpp" />
     <ClCompile Include="..\src\audio\AudioDeviceImpl.cpp" />
     <ClCompile Include="..\src\audio\AudioFileDevice.cpp" />
     <ClCompile Include="..\src\audio\AudioIODevice.cpp" />
@@ -234,12 +236,14 @@
     <ClInclude Include="..\include\hpluck.h" />
     <ClInclude Include="..\include\macros.h" />
     <ClInclude Include="..\include\Ougens.h" />
+    <ClInclude Include="..\include\psnprintf.h" />
     <ClInclude Include="..\include\randfuncs.h" />
     <ClInclude Include="..\include\rtupdate.h" />
     <ClInclude Include="..\include\rt_types.h" />
     <ClInclude Include="..\include\times.h" />
     <ClInclude Include="..\include\ugens.h" />
     <ClInclude Include="..\insts\base\WAVETABLE\WAVETABLE.h" />
+    <ClInclude Include="..\src\audio\AudioDevice.h" />
     <ClInclude Include="..\src\audio\AudioDeviceImpl.h" />
     <ClInclude Include="..\src\audio\AudioFileDevice.h" />
     <ClInclude Include="..\src\audio\AudioIODevice.h" />

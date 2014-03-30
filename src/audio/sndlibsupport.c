@@ -32,7 +32,9 @@
 #include <sys/stat.h>
 #ifdef _MSC_VER
 #include <io.h>
-#include "times.h"
+#include <times.h>
+#include <psnprintf.h>
+#define snprintf psnprintf
 #else
 #include <unistd.h>
 #include <sys/time.h>

@@ -27,8 +27,10 @@ int bpointer;
 #ifdef __cplusplus
 
 #include <stdlib.h>
+#ifdef _MSC_VER
+#else
 #include <unistd.h>
-
+#endif
 /* Use prototypes in function declarations. */
 #define YY_USE_PROTOS
 
@@ -1087,8 +1089,8 @@ YY_RULE_SETUP
 			if (!mm_yyin)
 			{
 				char msg[1024];
-				snprintf(msg, 1024, "Unable to open include file \"%s\"",
-						 mm_yytext);
+				//snprintf(msg, 1024, "Unable to open include file \"%s\"",
+				//		 mm_yytext);
 				mm_yyerror(msg);
 				exit(1);
 			}

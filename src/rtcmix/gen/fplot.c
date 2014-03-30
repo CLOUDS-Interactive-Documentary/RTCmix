@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #ifdef _MSC_VER
 #include <io.h>
-#define snprintf sprintf_s
+#include <psnprintf.h>
+#define snprintf psnprintf
 #else
 #include <unistd.h>
 #include <sys/file.h>

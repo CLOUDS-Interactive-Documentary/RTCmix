@@ -19,7 +19,10 @@
 #include <string.h>
 #include <math.h>
 #include <assert.h>
-
+#ifdef _MSC_VER
+#include <psnprintf.h>
+#define snprintf psnprintf
+#endif
 
 /* We maintain a stack of MAXSTACK lists, which we access when forming 
    user lists (i.e., {1, 2, "foo"}) and function argument lists.  Each
