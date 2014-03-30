@@ -15,12 +15,17 @@
 
 #define ALL_CHANS -1
 
+#ifdef _MSC_VER
+#include <sound.h>
+#else
 /* These are all for the older disk-based cmix functions. */
 extern int	     isopen[NFILES];        /* open status */
 extern SFHEADER      sfdesc[NFILES];
 extern SFMAXAMP      sfm[NFILES];
 extern struct stat   sfst[NFILES];
 extern int headersize[NFILES];
+#endif
+
 extern "C" void sfstats(int fd);       /* defined in sfstats.c */
 
 extern "C" {
@@ -172,7 +177,6 @@ int findpeakrmsdc(const char *funcname, const char *fname,
 	double ampavg[nchans];
 	double dcavg[nchans];
 	double rms[nchans];
-
 #endif
    int result = sndlib_findpeak(fd, -1, dataloc, -1, format, nchans,
                     startframe, nframes, peak, peakloc, ampavg, dcavg, rms);

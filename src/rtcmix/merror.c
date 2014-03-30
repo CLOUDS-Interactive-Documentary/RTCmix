@@ -10,7 +10,9 @@
 #endif
 #include	"mixerr.h"
 
+#ifndef WIN32
 int	mixerr;
+#endif
 char	*mix_errlist[] = {
 	"Error 0",
 	"This name already defined",

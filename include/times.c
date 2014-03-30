@@ -59,3 +59,5 @@ clock_t times (struct tms *__buffer) {
         __buffer->tms_cutime = 0;
         return __buffer->tms_utime;
 }
+
+//extern int gettimeofday(struct timeval* t,void* timezone);

@@ -3,6 +3,8 @@
 #include <ugens.h>
 
 extern double m_open(float *, short, double *);
+extern double m_input(float *p,short n_args,double *pp);
+extern double m_output(float *p,short n_args,double *pp);
 
 double
 m_input(float *p,short n_args,double *pp)

@@ -9,7 +9,7 @@
 #include <Instrument.h>
 #include <PField.h>
 #include <PFieldSet.h>
-#include "utils.h"
+#include "rtc_utils.h"
 #include "rt.h"
 #include "rtdefs.h"
 #include "mixerr.h"

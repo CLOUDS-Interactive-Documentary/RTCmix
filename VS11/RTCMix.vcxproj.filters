@@ -16,9 +16,6 @@
     <Filter Include="src\audio">
       <UniqueIdentifier>{eb813a79-83c5-49fe-9e23-89f6b0e273a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\sndlib">
-      <UniqueIdentifier>{7c7e2fff-480b-43e3-83d6-103d5978dc05}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\include">
       <UniqueIdentifier>{273434ac-975f-4d9c-ab4f-0fb06932f939}</UniqueIdentifier>
     </Filter>
@@ -45,6 +42,15 @@
     </Filter>
     <Filter Include="src\rtcmix\gen">
       <UniqueIdentifier>{c60bc1c5-18b4-4ddf-b8fd-6222f78106cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\control">
+      <UniqueIdentifier>{baac2561-2cd4-458b-8566-117a526745d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\control\maxmsp">
+      <UniqueIdentifier>{517771a2-52b5-4d82-ac7e-e64cd3f2fdc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\control\pfbus">
+      <UniqueIdentifier>{2c7e9bd4-f616-4fd2-8d8a-b740ce52ac56}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -243,9 +249,6 @@
     <ClCompile Include="..\genlib\resonz.c">
       <Filter>genlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\utils.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\check_byte_order.c">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -324,9 +327,6 @@
     <ClCompile Include="..\src\rtcmix\checkInsts.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\connection.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\converter.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -390,9 +390,6 @@
     <ClCompile Include="..\src\rtcmix\pyRTcmix.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\Random.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\RawDataFile.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
@@ -450,23 +447,11 @@
     <ClCompile Include="..\src\rtcmix\sound_sample_buf_read.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\rtcmix\table.cpp">
-      <Filter>src\rtcmix</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\rtcmix\tableutils.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
     <ClCompile Include="..\src\audio\sndlibsupport.c">
       <Filter>src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\sndlib\extra.c">
-      <Filter>src\sndlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\sndlib\headers.c">
-      <Filter>src\sndlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\sndlib\io.c">
-      <Filter>src\sndlib</Filter>
     </ClCompile>
     <ClCompile Include="..\src\rtcmix\heap\heap.cpp">
       <Filter>src\rtcmix\heap</Filter>
@@ -616,6 +601,30 @@
       <Filter>include</Filter>
     </ClCompile>
     <ClCompile Include="..\src\rtcmix\loader.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\connection.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\control\maxmsp\inletglue.cpp">
+      <Filter>src\control\maxmsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\control\maxmsp\RTInletPField.cpp">
+      <Filter>src\control\maxmsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\control\pfbus\pfbusglue.cpp">
+      <Filter>src\control\pfbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\control\pfbus\PFBusPField.cpp">
+      <Filter>src\control\pfbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtc_utils.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtc_table.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\rtcRandom.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
   </ItemGroup>
@@ -782,9 +791,6 @@
     <ClInclude Include="..\src\rtcmix\pyRTcmix.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\rtcmix\Random.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\rtcmix\RawDataFile.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
@@ -824,17 +830,11 @@
     <ClInclude Include="..\src\rtcmix\ug_intro.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\rtcmix\utils.h">
-      <Filter>src\rtcmix</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\rtcmix\version.h">
       <Filter>src\rtcmix</Filter>
     </ClInclude>
     <ClInclude Include="..\src\audio\sndlibsupport.h">
       <Filter>src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\sndlib\sndlib.h">
-      <Filter>src\sndlib</Filter>
     </ClInclude>
     <ClInclude Include="..\include\times.h">
       <Filter>include</Filter>
@@ -898,6 +898,21 @@
     </ClInclude>
     <ClInclude Include="..\src\audio\audiostream.h">
       <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\control\maxmsp\RTInletPField.h">
+      <Filter>src\control\maxmsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\control\pfbus\PFBusPField.h">
+      <Filter>src\control\pfbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\rtc_utils.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\rtcRandom.h">
+      <Filter>src\rtcmix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtcmix\sound.h">
+      <Filter>src\rtcmix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

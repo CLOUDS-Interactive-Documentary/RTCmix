@@ -14,7 +14,6 @@ extern off_t filepointer[NFILES];
 extern int sfd[NFILES];
 extern int isopen[NFILES];
 
-
 static SFCODE ampcode = {
 	SF_MAXAMP,
 	sizeof(SFMAXAMP) + sizeof(SFCODE)

@@ -2,7 +2,7 @@
 // Special interface code to allow reference counting on opaque handles
 
 #include <minc_internal.h>
-#include "../../rtcmix/utils.h"
+#include "../../rtcmix/rtc_utils.h"
 
 void
 ref_handle(MincHandle h)

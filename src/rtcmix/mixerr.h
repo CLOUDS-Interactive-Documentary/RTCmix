@@ -10,5 +10,9 @@
 
 #define	MX_NERR		5	/*  Number of standard error codes	*/
 
+#ifdef WIN32
+int mixerr;
+#else
 extern	int mixerr;
+#endif
 extern	char *mix_errlist[];

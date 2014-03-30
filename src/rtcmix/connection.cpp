@@ -16,7 +16,7 @@
 #include <ugens.h>		// for warn, die
 #include <Option.h>
 
-#include "DynamicLib.h"
+//#include "DynamicLib.h"
 
 #if !defined(SHAREDLIBDIR)
 #error "Compile flags are missing macro for SHAREDLIBDIR"

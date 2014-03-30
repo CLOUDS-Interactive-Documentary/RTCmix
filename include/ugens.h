@@ -232,7 +232,7 @@ void addLegacyfunc(const char *label, double (*func_ptr)(float *, int, double *)
 #endif
 
 
-#if defined(__cplusplus) && !defined(_MSC_VER)
+#if defined(__cplusplus)/* && !defined(_MSC_VER)*/
 #define UG_INTRO(flabel, func) \
    { \
 	addLegacyfunc(flabel, (double (*)(float *, int, double *)) func); \

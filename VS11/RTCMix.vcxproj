@@ -99,6 +99,10 @@
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
     <ClCompile Include="..\src\conf\Config.cpp" />
+    <ClCompile Include="..\src\control\maxmsp\inletglue.cpp" />
+    <ClCompile Include="..\src\control\maxmsp\RTInletPField.cpp" />
+    <ClCompile Include="..\src\control\pfbus\pfbusglue.cpp" />
+    <ClCompile Include="..\src\control\pfbus\PFBusPField.cpp" />
     <ClCompile Include="..\src\parser\minc\builtin.c" />
     <ClCompile Include="..\src\parser\minc\callextfunc.cpp" />
     <ClCompile Include="..\src\parser\minc\error.c" />
@@ -174,7 +178,7 @@
     <ClCompile Include="..\src\rtcmix\profile.c" />
     <ClCompile Include="..\src\rtcmix\pRTcmix.cpp" />
     <ClCompile Include="..\src\rtcmix\pyRTcmix.cpp" />
-    <ClCompile Include="..\src\rtcmix\Random.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtcRandom.cpp" />
     <ClCompile Include="..\src\rtcmix\RawDataFile.cpp" />
     <ClCompile Include="..\src\rtcmix\RefCounted.cpp" />
     <ClCompile Include="..\src\rtcmix\resetamp.c" />
@@ -201,14 +205,11 @@
     <ClCompile Include="..\src\rtcmix\sound.c" />
     <ClCompile Include="..\src\rtcmix\soundio.c" />
     <ClCompile Include="..\src\rtcmix\sound_sample_buf_read.cpp" />
-    <ClCompile Include="..\src\rtcmix\table.cpp" />
+    <ClCompile Include="..\src\rtcmix\rtc_table.cpp" />
     <ClCompile Include="..\src\rtcmix\tableutils.cpp" />
     <ClCompile Include="..\src\rtcmix\tempo.c" />
     <ClCompile Include="..\src\rtcmix\ug_intro.c" />
-    <ClCompile Include="..\src\rtcmix\utils.cpp" />
-    <ClCompile Include="..\src\sndlib\extra.c" />
-    <ClCompile Include="..\src\sndlib\headers.c" />
-    <ClCompile Include="..\src\sndlib\io.c" />
+    <ClCompile Include="..\src\rtcmix\rtc_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h" />
@@ -259,6 +260,8 @@
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
     <ClInclude Include="..\src\conf\Config.h" />
+    <ClInclude Include="..\src\control\maxmsp\RTInletPField.h" />
+    <ClInclude Include="..\src\control\pfbus\PFBusPField.h" />
     <ClInclude Include="..\src\include\maxdispargs.h" />
     <ClInclude Include="..\src\parser\minc\handle.h" />
     <ClInclude Include="..\src\parser\minc\minc.h" />
@@ -287,7 +290,7 @@
     <ClInclude Include="..\src\rtcmix\prototypes.h" />
     <ClInclude Include="..\src\rtcmix\pRTcmix.h" />
     <ClInclude Include="..\src\rtcmix\pyRTcmix.h" />
-    <ClInclude Include="..\src\rtcmix\Random.h" />
+    <ClInclude Include="..\src\rtcmix\rtcRandom.h" />
     <ClInclude Include="..\src\rtcmix\RawDataFile.h" />
     <ClInclude Include="..\src\rtcmix\RefCounted.h" />
     <ClInclude Include="..\src\rtcmix\rt.h" />
@@ -298,12 +301,17 @@
     <ClInclude Include="..\src\rtcmix\RTSemaphore.h" />
     <ClInclude Include="..\src\rtcmix\sfheader.h" />
     <ClInclude Include="..\src\rtcmix\sockdefs.h" />
+    <ClInclude Include="..\src\rtcmix\sound.h" />
     <ClInclude Include="..\src\rtcmix\spray.h" />
     <ClInclude Include="..\src\rtcmix\tableutils.h" />
     <ClInclude Include="..\src\rtcmix\ug_intro.h" />
-    <ClInclude Include="..\src\rtcmix\utils.h" />
+    <ClInclude Include="..\src\rtcmix\rtc_utils.h" />
     <ClInclude Include="..\src\rtcmix\version.h" />
-    <ClInclude Include="..\src\sndlib\sndlib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="snd.vcxproj">
+      <Project>{4d1f91ac-4b20-4dd5-8ced-b4ed12fc7b31}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7EC893E2-B0FB-4F71-99D7-D0553AA93895}</ProjectGuid>
@@ -379,7 +387,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\rtcmix\gen;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\include;..\src\rtcmix\gen;..\src\control\pfbus;..\src\control\maxmsp;..\src\parser\minc;..\src\parser;..\src\sndlib;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -407,7 +415,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\rtcmix\gen;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\include;..\src\rtcmix\gen;..\src\control\pfbus;..\src\control\maxmsp;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

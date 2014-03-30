@@ -36,7 +36,7 @@
 #include <ugens.h>
 #include <RTcmix.h>
 #include <Option.h>
-#include "utils.h"
+#include "rtc_utils.h"
 #include <ug_intro.h>
 #include <AudioDevice.h>
 #ifdef MULTI_THREAD
@@ -48,10 +48,10 @@
 #include "dbug.h"
 #include "globals.h"
 
-
 // This is declared (still) in globals.h for use in gen routines.
-
-FILE *	infile_desc[MAX_INFILE_DESC + 1];
+//#ifndef WIN32
+extern FILE *	infile_desc[MAX_INFILE_DESC + 1];
+//#endif
 
 extern "C" {
 #ifdef SGI

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <PField.h>
-#include "utils.h"
+#include "rtc_utils.h"
 #include "tableutils.h"
 #include <ugens.h>		// for warn, die
 
@@ -145,7 +145,7 @@ makeLFO(const Arg args[], const int nargs)
 
 
 // -------------------------------------------------------------- makerandom ---
-#include <Random.h>
+#include <rtcRandom.h>
 #ifdef _MSC_VER
 #include <time.h>
 #else

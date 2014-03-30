@@ -219,7 +219,7 @@ double LFOPField::doubleValue(double percent) const
 
 // RandomPField
 
-#include <Random.h>
+#include <rtcRandom.h>
 
 RandomPField::RandomPField(double krate, Random *generator, PField *freq,
 		PField *min, PField *max, PField *mid, PField *tight)
