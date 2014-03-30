@@ -71,7 +71,7 @@ Option.cpp \
 PFBusData.cpp \
 PField.cpp \
 PFieldSet.cpp \
-Random.cpp \
+rtcRandom.cpp \
 RawDataFile.cpp \
 RefCounted.cpp \
 RTcmix.cpp \
@@ -89,11 +89,11 @@ rtsetparams.cpp \
 rtwritesamps.cpp \
 set_option.cpp \
 sound_sample_buf_read.cpp \
-table.cpp \
+rtc_table.cpp \
 tableutils.cpp \
 modtable.cpp \
 ops.cpp \
-utils.cpp \
+rtc_utils.cpp \
 rt_ug_intro.cpp \
 connection.cpp \
 converter.cpp \

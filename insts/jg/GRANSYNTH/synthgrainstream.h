@@ -1,7 +1,7 @@
 // Copyright (C) 2005 John Gibson.  See ``LICENSE'' for the license to this
 // software and for a DISCLAIMER OF ALL WARRANTIES.
 
-#include "../../../src/rtcmix/Random.h"
+#include "../../../src/rtcmix/rtcRandom.h"
 
 #define MAX_NUM_VOICES 50
 

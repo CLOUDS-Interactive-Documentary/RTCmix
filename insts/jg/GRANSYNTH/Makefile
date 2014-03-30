@@ -3,7 +3,7 @@ include ../package.conf
 NAME = GRANSYNTH
 
 CURDIR = $(CMIXDIR)/insts/jg/$(NAME)
-RANDOM = ../../../src/rtcmix/Random
+RANDOM = ../../../src/rtcmix/rtcRandom
 OBJS = $(NAME).o synthgrainstream.o synthgrainvoice.o $(RANDOM).o
 PROGS = lib$(NAME).so $(NAME)
 #CXXFLAGS += -pg

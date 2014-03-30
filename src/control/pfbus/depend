@@ -37,7 +37,7 @@ pfbusglue.o: pfbusglue.cpp /usr/include/stdlib.h \
   /Users/lukedubois/Documents/CLIENTS/CLOUDS/newshit/RTCmix_GIT/include/rtcmix_types.h \
   /Users/lukedubois/Documents/CLIENTS/CLOUDS/newshit/RTCmix_GIT/include/PField.h \
   /Users/lukedubois/Documents/CLIENTS/CLOUDS/newshit/RTCmix_GIT/include/RefCounted.h \
-  PFBusPField.h ../../rtcmix/utils.h /usr/include/assert.h \
+  PFBusPField.h ../../rtcmix/rtc_utils.h /usr/include/assert.h \
   /Users/lukedubois/Documents/CLIENTS/CLOUDS/newshit/RTCmix_GIT/include/ugens.h \
   /usr/include/sys/types.h \
   /Users/lukedubois/Documents/CLIENTS/CLOUDS/newshit/RTCmix_GIT/include/rt_types.h \
