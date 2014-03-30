@@ -1,6 +1,6 @@
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
-#if 0
+#if 1
 static char mm_yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02/21/93";
 #else
 __IDSTRING(mm_yyrcsid, "$NetBSD: skeleton.c,v 1.14 1997/10/20 03:41:16 lukem Exp $");
@@ -653,7 +653,8 @@ double minc_memflush()
 //int mm_yyparse __P((void));
 int mm_yyparse(char *buf, int len);
 
-static int mm_yygrowstack __P((void));
+// JRG -- get rid of that macro!
+//static int mm_yygrowstack __P((void));
 static int mm_yygrowstack()
 {
     int newsize, i;

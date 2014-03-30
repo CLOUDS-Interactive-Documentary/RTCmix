@@ -2,9 +2,14 @@
 #include <sfheader.h>
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <io.h>
+#define snprintf sprintf_s
+#else
 #include <unistd.h>
-#include <string.h>
 #include <sys/file.h>
+#endif
+#include <string.h>
 #include <sys/types.h>
 
 /* fplot syntax:

@@ -91,6 +91,16 @@
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
     <ClCompile Include="..\src\conf\Config.cpp" />
+    <ClCompile Include="..\src\parser\minc\builtin.c" />
+    <ClCompile Include="..\src\parser\minc\callextfunc.cpp" />
+    <ClCompile Include="..\src\parser\minc\error.c" />
+    <ClCompile Include="..\src\parser\minc\handle.c" />
+    <ClCompile Include="..\src\parser\minc\lex.yy.c" />
+    <ClCompile Include="..\src\parser\minc\sym.c" />
+    <ClCompile Include="..\src\parser\minc\trees.c" />
+    <ClCompile Include="..\src\parser\minc\utils.c" />
+    <ClCompile Include="..\src\parser\minc\y.tab.c" />
+    <ClCompile Include="..\src\parser\parse_with_minc.c" />
     <ClCompile Include="..\src\rtcmix\addcheckfunc.cpp" />
     <ClCompile Include="..\src\rtcmix\addrtInst.cpp" />
     <ClCompile Include="..\src\rtcmix\buffers.cpp" />
@@ -104,6 +114,27 @@
     <ClCompile Include="..\src\rtcmix\dispatch.cpp" />
     <ClCompile Include="..\src\rtcmix\filter.cpp" />
     <ClCompile Include="..\src\rtcmix\funderflow.c" />
+    <ClCompile Include="..\src\rtcmix\gen\fdump.c" />
+    <ClCompile Include="..\src\rtcmix\gen\floc.c" />
+    <ClCompile Include="..\src\rtcmix\gen\fnscl.c" />
+    <ClCompile Include="..\src\rtcmix\gen\fplot.c" />
+    <ClCompile Include="..\src\rtcmix\gen\fsize.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen1.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen10.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen17.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen18.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen2.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen20.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen24.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen25.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen3.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen4.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen5.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen6.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen7.c" />
+    <ClCompile Include="..\src\rtcmix\gen\gen9.c" />
+    <ClCompile Include="..\src\rtcmix\gen\makegen.c" />
+    <ClCompile Include="..\src\rtcmix\gen\modgens.c" />
     <ClCompile Include="..\src\rtcmix\getsample.c" />
     <ClCompile Include="..\src\rtcmix\heap\heap.cpp" />
     <ClCompile Include="..\src\rtcmix\infile.c" />
@@ -213,6 +244,11 @@
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
     <ClInclude Include="..\src\conf\Config.h" />
     <ClInclude Include="..\src\include\maxdispargs.h" />
+    <ClInclude Include="..\src\parser\minc\handle.h" />
+    <ClInclude Include="..\src\parser\minc\minc.h" />
+    <ClInclude Include="..\src\parser\minc\minc_internal.h" />
+    <ClInclude Include="..\src\parser\minc\y.tab.h" />
+    <ClInclude Include="..\src\parser\rtcmix_parse.h" />
     <ClInclude Include="..\src\rtcmix\atomic_stack.h" />
     <ClInclude Include="..\src\rtcmix\buffers.h" />
     <ClInclude Include="..\src\rtcmix\BusSlot.h" />
@@ -329,7 +365,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\rtcmix\gen;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -357,7 +393,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\rtcmix\gen;..\src\parser\minc;..\src\parser;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

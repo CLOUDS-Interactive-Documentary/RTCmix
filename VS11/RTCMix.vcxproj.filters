@@ -37,6 +37,15 @@
     <Filter Include="insts\base\WAVETABLE">
       <UniqueIdentifier>{72070231-a088-4604-accf-0ff51689bc46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\parser">
+      <UniqueIdentifier>{98d42ef1-c35e-4b7c-8816-672e55e1d5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\parser\minc">
+      <UniqueIdentifier>{f40eb3ee-a2d0-42fd-a992-e178a4c03307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rtcmix\gen">
+      <UniqueIdentifier>{c60bc1c5-18b4-4ddf-b8fd-6222f78106cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\genlib\reverb.c">
@@ -489,6 +498,99 @@
     <ClCompile Include="..\src\rtcmix\main.cpp">
       <Filter>src\rtcmix</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\parser\parse_with_minc.c">
+      <Filter>src\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\builtin.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\error.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\handle.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\lex.yy.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\sym.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\trees.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\utils.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\y.tab.c">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\parser\minc\callextfunc.cpp">
+      <Filter>src\parser\minc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\fdump.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\floc.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\fnscl.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\fplot.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\fsize.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen1.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen2.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen3.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen4.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen5.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen6.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen7.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen9.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen10.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen17.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen18.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen20.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen24.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\gen25.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\makegen.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\gen\modgens.c">
+      <Filter>src\rtcmix\gen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -739,6 +841,21 @@
     </ClInclude>
     <ClInclude Include="..\insts\base\WAVETABLE\WAVETABLE.h">
       <Filter>insts\base\WAVETABLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser\rtcmix_parse.h">
+      <Filter>src\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser\minc\handle.h">
+      <Filter>src\parser\minc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser\minc\minc.h">
+      <Filter>src\parser\minc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser\minc\minc_internal.h">
+      <Filter>src\parser\minc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser\minc\y.tab.h">
+      <Filter>src\parser\minc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,12 @@
 #include <ugens.h>
 #include <stdio.h>
 #include <math.h>
+#ifdef _MSC_VER
+#include <time.h>
+#include <times.h>
+#else
 #include <sys/time.h>
+#endif
 
 /* fills a gen with random numbers b/t 0 and 1 --
    the argument is the distribution type:

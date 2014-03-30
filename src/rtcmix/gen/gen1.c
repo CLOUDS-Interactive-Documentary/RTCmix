@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 #include <ugens.h>
 #include "prototypes.h"
 #include <sndlibsupport.h>
