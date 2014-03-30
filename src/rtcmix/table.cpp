@@ -12,6 +12,7 @@
 #ifdef _MSC_VER
 #include <io.h>
 #include <time.h>
+#include <times.h>
 #else
 #include <unistd.h>
 #include <sys/time.h>
@@ -2020,87 +2021,88 @@ dumptable(const Arg args[], const int nargs)
 
 #define DEFAULT_PLOTCMD "with lines"
 
-double
-plottable(const Arg args[], const int nargs)
-{
-#ifdef MACOSX
-	static int plot_count = 1;
-#endif
-	int pause = 10;
-	char cmd[256];
-	const char *plotcmds = DEFAULT_PLOTCMD;
-
-	if (nargs < 1 || nargs > 3)
-		return die("plottable",
-					  "Usage: plottable(table [, pause] [, plot_commands])");
-
-	PField *table = (PField *) args[0];
-	if (table == NULL)
-		return die("plottable", "First argument must be the table to plot.");
-
-	// 2nd and 3rd args are optional and can be in either order.  If there's
-	// a 4th arg, it must be a string for the plot label.
-	const char *table_name = "Table";
-	if (nargs > 1) {
-		if (args[1].isType(DoubleType))
-			pause = (int) args[1];
-		else if (args[1].isType(StringType))
-			plotcmds = (const char *) args[1];
-		else
-			return die("plottable",
-						  "Second argument can be pause length or plot commands.");
-		if (nargs > 2) {
-			if (args[2].isType(DoubleType))
-				pause = (int) args[2];
-			else if (args[2].isType(StringType))
-				plotcmds = (const char *) args[2];
-			else
-				return die("plottable",
-							  "Third argument can be pause length or plot commands.");
-		}
-		if (nargs > 3) {
-			if (args[3].isType(StringType))
-				table_name = (const char *) args[3];
-		}
-	}
-
-	char data_file[256] = "/tmp/rtcmix_plot_data_XXXXXX";
-	char cmd_file[256] = "/tmp/rtcmix_plot_cmds_XXXXXX";
-
-	if (mkstemp(data_file) == -1 || mkstemp(cmd_file) == -1)
-		return die("plottable", "Can't make temp files for gnuplot.");
-
-	FILE *fdata = fopen(data_file, "w");
-	FILE *fcmd = fopen(cmd_file, "w");
-	if (fdata == NULL || fcmd == NULL)
-		return die("plottable", "Can't open temp files for gnuplot.");
-
-	int chars = table->print(fdata);
-	fclose(fdata);
-	
-	if (chars <= 0)
-		return die("plottable", "Cannot print this kind of table");
-
-	fprintf(fcmd, 
-#ifdef MACOSX	// NB: requires installation of Aquaterm and gnuplot >=3.8
-		"set term aqua %d\n"
-#endif
-		"set title \"%s\"\n"
-		"set grid\n"
-		"plot '%s' notitle %s\n"
-		"!rm '%s' '%s'\n"
-		"pause %d\n",
-#ifdef MACOSX
-		plot_count++,
-#endif
-		table_name,
-		data_file, plotcmds, data_file, cmd_file, pause);
-	fclose(fcmd);
-
-	snprintf(cmd, 255, "gnuplot %s &", cmd_file);
-	cmd[255] = 0;
-	system(cmd);
-
-	return 0.0;
-}
+//double
+//plottable(const Arg args[], const int nargs)
+//{
+//#ifdef MACOSX
+//	static int plot_count = 1;
+//#endif
+//	int pause = 10;
+//	char cmd[256];
+//	const char *plotcmds = DEFAULT_PLOTCMD;
+//
+//	if (nargs < 1 || nargs > 3)
+//		return die("plottable",
+//					  "Usage: plottable(table [, pause] [, plot_commands])");
+//
+//	PField *table = (PField *) args[0];
+//	if (table == NULL)
+//		return die("plottable", "First argument must be the table to plot.");
+//
+//	// 2nd and 3rd args are optional and can be in either order.  If there's
+//	// a 4th arg, it must be a string for the plot label.
+//	const char *table_name = "Table";
+//	if (nargs > 1) {
+//		if (args[1].isType(DoubleType))
+//			pause = (int) args[1];
+//		else if (args[1].isType(StringType))
+//			plotcmds = (const char *) args[1];
+//		else
+//			return die("plottable",
+//						  "Second argument can be pause length or plot commands.");
+//		if (nargs > 2) {
+//			if (args[2].isType(DoubleType))
+//				pause = (int) args[2];
+//			else if (args[2].isType(StringType))
+//				plotcmds = (const char *) args[2];
+//			else
+//				return die("plottable",
+//							  "Third argument can be pause length or plot commands.");
+//		}
+//		if (nargs > 3) {
+//			if (args[3].isType(StringType))
+//				table_name = (const char *) args[3];
+//		}
+//	}
+//
+//	char data_file[256] = "/tmp/rtcmix_plot_data_XXXXXX";
+//	char cmd_file[256] = "/tmp/rtcmix_plot_cmds_XXXXXX";
+//
+//	if (mkstemp(data_file) == -1 || mkstemp(cmd_file) == -1)
+//		return die("plottable", "Can't make temp files for gnuplot.");
+//
+//	FILE *fdata = fopen(data_file, "w");
+//	FILE *fcmd = fopen(cmd_file, "w");
+//	if (fdata == NULL || fcmd == NULL)
+//		return die("plottable", "Can't open temp files for gnuplot.");
+//
+//	int chars = table->print(fdata);
+//	fclose(fdata);
+//	
+//	if (chars <= 0)
+//		return die("plottable", "Cannot print this kind of table");
+//
+//	fprintf(fcmd, 
+//#ifdef MACOSX	// NB: requires installation of Aquaterm and gnuplot >=3.8
+//		"set term aqua %d\n"
+//#endif
+//		"set title \"%s\"\n"
+//		"set grid\n"
+//		"plot '%s' notitle %s\n"
+//		"!rm '%s' '%s'\n"
+//		"pause %d\n",
+//#ifdef MACOSX
+//		plot_count++,
+//#endif
+//		table_name,
+//		data_file, plotcmds, data_file, cmd_file, pause);
+//	fclose(fcmd);
+//#ifdef _MSC_VER
+//	snprintf(cmd, 255, "gnuplot %s &", cmd_file);
+//#else
+//	cmd[255] = 0;
+//	system(cmd);
+//
+//	return 0.0;
+//}
 

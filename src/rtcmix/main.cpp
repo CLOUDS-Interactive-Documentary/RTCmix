@@ -5,15 +5,19 @@
 #define DBUG
 //#define DENORMAL_CHECK
 //#include <pthread.h>
-#include <sys/resource.h>
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
+#include <sys/resource.h>
 #include <sys/socket.h>
+#include <unistd.h>
 #include <netinet/in.h>
+#endif
+#include <stdlib.h>
 #include <signal.h>
 
 #include "RTcmixMain.h"
@@ -101,7 +105,7 @@ extern "C" {
 int
 rtcmixmain()	// BGG mm -- now called this for max/msp
 {
-	bzero(MMPrint::mm_print_buf, SIZEOF_MMPRINTBUF);
+	memset(MMPrint::mm_print_buf, 0, SIZEOF_MMPRINTBUF);
 	MMPrint::mm_print_ptr = MMPrint::mm_print_buf;
 
 // BGG no argc and argv in max/msp version mm
@@ -153,7 +157,7 @@ char *get_print()
 
 void reset_print()
 {
-	bzero(MMPrint::mm_print_buf, SIZEOF_MMPRINTBUF);
+	memset(MMPrint::mm_print_buf, 0, SIZEOF_MMPRINTBUF);
 	MMPrint::mm_print_ptr = MMPrint::mm_print_buf;
 }
 

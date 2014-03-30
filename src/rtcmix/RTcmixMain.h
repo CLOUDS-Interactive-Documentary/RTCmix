@@ -3,6 +3,9 @@
 
 #include <RTcmix.h>
 #include "DynamicLib.h"
+#ifdef _MSC_VER
+	#define RTCMIX_EXPORT __declspec(dllexport)
+#endif
 
 class RTcmixMain : public RTcmix {
 public:

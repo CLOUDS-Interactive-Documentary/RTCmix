@@ -28,6 +28,15 @@
     <Filter Include="src\conf">
       <UniqueIdentifier>{a8337471-a083-4cfd-80c2-ec9e572dbd4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="insts">
+      <UniqueIdentifier>{d168fa7d-fa2e-4a1c-850f-7118ecaade8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="insts\base">
+      <UniqueIdentifier>{0070dabc-0356-4a3c-80b9-fe83c9d21741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="insts\base\WAVETABLE">
+      <UniqueIdentifier>{72070231-a088-4604-accf-0ff51689bc46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\genlib\reverb.c">
@@ -474,6 +483,12 @@
     <ClCompile Include="..\src\conf\Config.cpp">
       <Filter>src\conf</Filter>
     </ClCompile>
+    <ClCompile Include="..\insts\base\WAVETABLE\WAVETABLE.cpp">
+      <Filter>insts\base\WAVETABLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\main.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -721,6 +736,9 @@
     </ClInclude>
     <ClInclude Include="..\src\conf\Config.h">
       <Filter>src\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\insts\base\WAVETABLE\WAVETABLE.h">
+      <Filter>insts\base\WAVETABLE</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

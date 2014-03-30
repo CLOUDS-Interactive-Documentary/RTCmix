@@ -85,6 +85,7 @@
     <ClCompile Include="..\genlib\tableset.c" />
     <ClCompile Include="..\genlib\wshape.c" />
     <ClCompile Include="..\include\dirent.c" />
+    <ClCompile Include="..\insts\base\WAVETABLE\WAVETABLE.cpp" />
     <ClCompile Include="..\src\audio\AudioFileDevice.cpp" />
     <ClCompile Include="..\src\audio\audio_devices.cpp" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
@@ -113,6 +114,7 @@
     <ClCompile Include="..\src\rtcmix\lfo.cpp" />
     <ClCompile Include="..\src\rtcmix\loader.cpp" />
     <ClCompile Include="..\src\rtcmix\load_utils.c" />
+    <ClCompile Include="..\src\rtcmix\main.cpp" />
     <ClCompile Include="..\src\rtcmix\merror.c" />
     <ClCompile Include="..\src\rtcmix\message.c" />
     <ClCompile Include="..\src\rtcmix\minc_functions.cpp" />
@@ -204,6 +206,7 @@
     <ClInclude Include="..\include\rt_types.h" />
     <ClInclude Include="..\include\times.h" />
     <ClInclude Include="..\include\ugens.h" />
+    <ClInclude Include="..\insts\base\WAVETABLE\WAVETABLE.h" />
     <ClInclude Include="..\src\audio\AudioFileDevice.h" />
     <ClInclude Include="..\src\audio\audio_devices.h" />
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
@@ -321,12 +324,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MAXMSP=1;SHAREDLIBDIR=".";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MAXMSP=1;SHAREDLIBDIR=".";OPENFRAMEWORKS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\genlib;..\include;..\src\rtcmix;..\src\rtcmix\heap;..\src\audio;..\src\sndlib;..\src\include;..\src\conf;..\insts\base\WAVETABLE</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -350,7 +353,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;MAXMSP=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;MAXMSP=1;SHAREDLIBDIR=".";OPENFRAMEWORKS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>

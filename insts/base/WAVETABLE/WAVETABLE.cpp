@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ugens.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include <Instrument.h>
 #include <PField.h>
