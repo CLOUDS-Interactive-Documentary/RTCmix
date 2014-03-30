@@ -832,6 +832,7 @@ sndlib_put_current_header_comment(int    fd,
 
    if (peak && peakloc) {                         /* use supplied peak stats */
       struct timeval tp;
+	  //struct timezone tz;
       int n;
 
       for (n = 0; n < chans; n++) {

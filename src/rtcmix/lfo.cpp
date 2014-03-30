@@ -10,6 +10,8 @@
 #include <ugens.h>		// for warn, die
 
 #ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
 #include <times.h>
 #endif
 
@@ -259,6 +261,7 @@ makerandom(const Arg args[], const int nargs)
 		seed = (int) args[index];
 	if (seed == 0) {
 		struct timeval tv;
+//		struct timezone tz;
 		gettimeofday(&tv, NULL);
 		seed = (int) tv.tv_usec;
 	}

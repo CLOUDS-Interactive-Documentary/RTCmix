@@ -40,12 +40,8 @@ static float s_brrand()
 void tsrand()
 {
 	struct timeval tv;
-#if defined(timezone)
-	struct timezone tz;
-#else
-	int tz;
-#endif
-	gettimeofday(&tv,&tz);
+	//struct timezone tvz;
+	gettimeofday(&tv,NULL);
 	s_srrand(tv.tv_usec);
 }
 

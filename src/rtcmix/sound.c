@@ -616,11 +616,7 @@ int
 endnote(int xno)
 {
 	struct timeval tp;	
-#if defined(timezone)
-	struct timezone tzp;
-#else
-	int tzp;
-#endif
+//	struct timezone tzp;
 	int i,j,final_bytes,fno;
 	float notepeak,*pk;
 	double total;
@@ -707,7 +703,7 @@ endnote(int xno)
 		if(*(pk+i) > notepeak) notepeak = *(pk+i);
 	}
 	
-	gettimeofday(&tp,&tzp);
+	gettimeofday(&tp,NULL);
 	sfmaxamptime(&sfm[fno]) = tp.tv_sec;
 		
 	if((filepointer[fno] = lseek(sfd[fno],0L,0)) < 0) {

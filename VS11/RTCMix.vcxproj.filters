@@ -603,6 +603,21 @@
     <ClCompile Include="..\src\audio\AudioDevice.cpp">
       <Filter>src\audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\audio\DualOutputAudioDevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\AudioOutputGroupDevice.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_dev_creator.cpp">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\times.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtcmix\loader.cpp">
+      <Filter>src\rtcmix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -873,6 +888,15 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\src\audio\AudioDevice.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\DualOutputAudioDevice.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\AudioOutputGroupDevice.h">
+      <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audiostream.h">
       <Filter>src\audio</Filter>
     </ClInclude>
   </ItemGroup>

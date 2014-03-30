@@ -98,6 +98,7 @@ double m_srand(float p[], int n_args)
 
    if (n_args == 0) {
       struct timeval tv;
+//	  struct timezone tz;
       gettimeofday(&tv, NULL);
       randx = (unsigned int) tv.tv_usec;
 	  rtcmix_advise("srand", "Seed initialized internally with value %u", randx);

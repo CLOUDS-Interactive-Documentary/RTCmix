@@ -86,12 +86,16 @@
     <ClCompile Include="..\genlib\wshape.c" />
     <ClCompile Include="..\include\dirent.c" />
     <ClCompile Include="..\include\psnprintf.c" />
+    <ClCompile Include="..\include\times.c" />
     <ClCompile Include="..\insts\base\WAVETABLE\WAVETABLE.cpp" />
     <ClCompile Include="..\src\audio\AudioDevice.cpp" />
     <ClCompile Include="..\src\audio\AudioDeviceImpl.cpp" />
     <ClCompile Include="..\src\audio\AudioFileDevice.cpp" />
     <ClCompile Include="..\src\audio\AudioIODevice.cpp" />
+    <ClCompile Include="..\src\audio\AudioOutputGroupDevice.cpp" />
     <ClCompile Include="..\src\audio\audio_devices.cpp" />
+    <ClCompile Include="..\src\audio\audio_dev_creator.cpp" />
+    <ClCompile Include="..\src\audio\DualOutputAudioDevice.cpp" />
     <ClCompile Include="..\src\audio\sndlibsupport.c" />
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp" />
     <ClCompile Include="..\src\conf\Config.cpp" />
@@ -149,6 +153,7 @@
     <ClCompile Include="..\src\rtcmix\intraverse.cpp" />
     <ClCompile Include="..\src\rtcmix\io.c" />
     <ClCompile Include="..\src\rtcmix\lfo.cpp" />
+    <ClCompile Include="..\src\rtcmix\loader.cpp" />
     <ClCompile Include="..\src\rtcmix\main.cpp" />
     <ClCompile Include="..\src\rtcmix\merror.c" />
     <ClCompile Include="..\src\rtcmix\message.c" />
@@ -247,7 +252,10 @@
     <ClInclude Include="..\src\audio\AudioDeviceImpl.h" />
     <ClInclude Include="..\src\audio\AudioFileDevice.h" />
     <ClInclude Include="..\src\audio\AudioIODevice.h" />
+    <ClInclude Include="..\src\audio\AudioOutputGroupDevice.h" />
+    <ClInclude Include="..\src\audio\audiostream.h" />
     <ClInclude Include="..\src\audio\audio_devices.h" />
+    <ClInclude Include="..\src\audio\DualOutputAudioDevice.h" />
     <ClInclude Include="..\src\audio\sndlibsupport.h" />
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h" />
     <ClInclude Include="..\src\conf\Config.h" />

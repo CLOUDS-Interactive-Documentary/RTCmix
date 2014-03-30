@@ -26,12 +26,8 @@ void Orand::seed(int seed)
 void Orand::timeseed()
 {
 	struct timeval tv;
-#ifdef _MSC_VER
-	int tz;
-#else
-	struct timezone tz;
-#endif
-	gettimeofday(&tv,&tz);
+//	struct timezone tz;
+	gettimeofday(&tv,NULL);
 	seed(tv.tv_usec);
 }
 

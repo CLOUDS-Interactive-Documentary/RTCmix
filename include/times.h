@@ -8,15 +8,20 @@
 #include <sys/types.h>
 #include <winsock2.h>
 
-int gettimeofday(struct timeval* t,void* timezone);
+#define __need_clock_t
+#include <time.h>
+
+//struct timezone 
+//{
+//  int  tz_minuteswest; /* minutes W of Greenwich */
+//  int  tz_dsttime;     /* type of dst correction */
+//};
 
 // from linux's sys/times.h
 
 //#include <features.h>
 
-#define __need_clock_t
-#include <time.h>
-
+int gettimeofday(struct timeval *tv, void* tz);
 
 /* Structure describing CPU time used by a process and its children.  */
 struct tms

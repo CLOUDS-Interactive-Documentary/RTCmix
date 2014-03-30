@@ -11,7 +11,7 @@
 #include <assert.h>
 #ifdef _MSC_VER
 #include <io.h>
-#include <time.h>
+//#include <time.h>
 #include <times.h>
 #else
 #include <unistd.h>
@@ -1326,6 +1326,7 @@ _random_table(const Arg args[], const int nargs, double *array, const int len)
 
 	if (seed == 0) {
 		struct timeval tv;
+//		struct timezone tz;
 		gettimeofday(&tv, NULL);
 		seed = (int) tv.tv_usec;
 	}
