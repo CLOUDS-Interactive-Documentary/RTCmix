@@ -25,6 +25,9 @@
     <Filter Include="src\rtcmix\heap">
       <UniqueIdentifier>{50a575de-4b3a-4d8c-97e9-e72c93982f19}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\conf">
+      <UniqueIdentifier>{a8337471-a083-4cfd-80c2-ec9e572dbd4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\genlib\reverb.c">
@@ -468,6 +471,9 @@
     <ClCompile Include="..\src\audio\ThreadedAudioDevice.cpp">
       <Filter>src\audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\conf\Config.cpp">
+      <Filter>src\conf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\genlib\complexf.h">
@@ -712,6 +718,9 @@
     </ClInclude>
     <ClInclude Include="..\src\audio\ThreadedAudioDevice.h">
       <Filter>src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\conf\Config.h">
+      <Filter>src\conf</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

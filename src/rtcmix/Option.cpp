@@ -12,6 +12,10 @@
 #include <Config.h>
 #include <string.h>
 #include "ugens.h"
+#ifdef _MSC_VER
+#define PATH_MAX FILENAME_MAX 
+#endif
+
 #ifndef MAXMSP
 #include <iostream>
 #endif
@@ -488,7 +492,11 @@ void Option::dump()
 void Option::reportError(const char *format, const char *msg1, const char *msg2)
 {
 	char buf[1024];
+#ifdef _MSC_VER
+	sprintf(buf, format, msg1, msg2);
+#else
 	snprintf(buf, 1024, format, msg1, msg2);
+#endif
 	printf("Config file error:  %s\n", buf);
 }
 

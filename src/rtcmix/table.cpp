@@ -9,8 +9,13 @@
 #include <math.h>
 #include <stdint.h>		// for int32_t, etc.
 #include <assert.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include <time.h>
+#else
 #include <unistd.h>
 #include <sys/time.h>
+#endif
 #include <RTcmix.h>
 #include <rtcmix_types.h>
 #include "prototypes.h"
