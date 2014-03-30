@@ -101,6 +101,14 @@ main(int argc, char *argv[], char **env)
 /* ----------------------------------------------------------- rtcmixmain --- */
 RTcmixMain *app;
 
+// use this to pass in info from the max/msp [buffer~] object.  All
+// we need to know is the number of frames, nchans, and starting address
+// flags and globals to support this stuff, arg!
+#define MAX_MM_BUFS 50
+mm_buf mm_bufs[MAX_MM_BUFS]; // mm_buf defined in rtdefs.h
+int mm_buf_input = -1; // used in rtgetin() and then rtsetinput()
+int n_mm_bufs = 0;
+
 extern "C" {
 int
 rtcmixmain()	// BGG mm -- now called this for max/msp
@@ -206,13 +214,7 @@ void pfield_set(int inlet, float pval)
 }
 
 
-// use this to pass in info from the max/msp [buffer~] object.  All
-// we need to know is the number of frames, nchans, and starting address
-// flags and globals to support this stuff, arg!
-#define MAX_MM_BUFS 50
-mm_buf mm_bufs[MAX_MM_BUFS]; // mm_buf defined in rtdefs.h
-int mm_buf_input = -1; // used in rtgetin() and then rtsetinput()
-int n_mm_bufs = 0;
+
 
 void buffer_set(char *bufname, float *bufstart, int nframes, int nchans, int modtime)
 {
